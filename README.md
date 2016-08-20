@@ -19,7 +19,7 @@ http://kylebrumm.com/ServiceSnatcher.js/
     - [ ] [Instagram](https://www.instagram.com/developer/)
     - [ ] [Last.fm](http://www.last.fm/api)
     - [x] [Pinterest](https://developers.pinterest.com/)
-    - [ ] [Trello](https://developers.trello.com/)
+    - [x] [Trello](https://developers.trello.com/)
 - [ ] Add the ability to pass what data you would like to query
 - [ ] Add the ability to pass in a "template"
 - [ ] Add caching with localstorage or cookies?
