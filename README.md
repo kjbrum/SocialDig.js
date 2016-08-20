@@ -12,7 +12,7 @@ http://kylebrumm.com/ServiceSnatcher.js/
 
 - [ ] Add additional social services
     - [x] 500px
-    - [ ] CodePen (unofficial)
+    - [x] CodePen (unofficial)
     - [x] Dribbble
     - [ ] Flickr
     - [ ] Github

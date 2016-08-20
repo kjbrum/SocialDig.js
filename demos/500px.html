@@ -35,8 +35,7 @@
                             var item = document.createElement('div');
                             item.className = 'gi photo';
 
-                            var photoHTML = '<a href="http://500px.com' + el.url + '" target="_blank"><img src="' + el.image_url + '" alt="' + el.name + '" title="' + el.name + '"></a>';
-                            item.innerHTML = photoHTML;
+                            item.innerHTML = '<a href="http://500px.com' + el.url + '" target="_blank"><img src="' + el.image_url + '" alt="' + el.name + '" title="' + el.name + '"></a>';
 
                             // Add the new item to the list
                             list.appendChild(item);

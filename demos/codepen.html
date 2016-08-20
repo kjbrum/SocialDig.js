@@ -24,29 +24,37 @@
                 service: 'codepen',
                 username: 'kjbrum',
             }, function(data) {
-                console.log(data);
+                if (data.data.length > 0) {
+                    var list = document.createElement('div');
+                    list.className = 'g g-s-2 pens';
 
-                // if (data.photos.length > 0) {
-                //     var list = document.createElement('div');
-                //     list.className = 'g g-s-2 photos';
+                    // Loop through the photos
+                    data.data.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            var item = document.createElement('div');
+                                item.className = 'gi pen';
 
-                //     // Loop through the photos
-                //     data.photos.forEach(function(el, idx, arr) {
-                //         if (idx < 4) {
-                //             var item = document.createElement('div');
-                //             item.className = 'gi photo';
+                            // Create the new pen iframe
+                            var iframe = document.createElement('iframe');
+                                iframe.height = '350';
+                                iframe.scrolling = 'no';
+                                iframe.src = '//codepen.io/kjbrum/embed/' + el.id + '/?height=350&theme-id=light&default-tab=result&embed-version=2'
+                                iframe.frameborder = 'no';
+                                iframe.allowtransparency = 'true';
+                                iframe.allowfullscreen = 'true';
+                                iframe.style.width = '100%';
 
-                //             var photoHTML = '<a href="http://500px.com' + el.url + '" target="_blank"><img src="' + el.image_url + '" alt="' + el.name + '" title="' + el.name + '"></a>';
-                //             item.innerHTML = photoHTML;
+                            // Add the iframe to the div
+                            item.appendChild(iframe);
 
-                //             // Add the new item to the list
-                //             list.appendChild(item);
-                //         }
-                //     });
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
 
-                //     // Add the list to the page
-                //     document.querySelector('.fivehundredpx').appendChild(list);
-                // }
+                    // Add the list to the page
+                    document.querySelector('.codepen').appendChild(list);
+                }
             });
         </script>
     </body>
