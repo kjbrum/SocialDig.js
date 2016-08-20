@@ -18,7 +18,7 @@ http://kylebrumm.com/ServiceSnatcher.js/
     - [ ] Github
     - [ ] Instagram
     - [ ] Last.fm
-    - [ ] Pinterest
+    - [x] Pinterest
 - [ ] Add the ability to pass what data you would like to query
 - [ ] Add the ability to pass in a "template"
 - [ ] Add caching with localstorage or cookies?
