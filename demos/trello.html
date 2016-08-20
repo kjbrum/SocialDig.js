@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Trello Demo | ServiceSnatcher.js</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Trello</h4>
+                <div class="trello"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/ServiceSnatcher.js"></script>
+        <script>
+            ServiceSnatcher({
+                selector: '.trello',
+                service: 'trello',
+                username: 'kylebrumm'
+            }, function(data) {
+                console.log(data);
+                if (data.length > 0) {
+                    var list = document.createElement('ul');
+                    list.className = 'list-plain boards';
+
+                    // Loop through the shots
+                    data.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            var item = document.createElement('li');
+                            item.className = 'board';
+
+                            item.innerHTML = '<a href="' + el.url + '">' + el.name + '</a><br><small>' + el.desc + '</small>';
+
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
+
+                    // Add the list to the page
+                    document.querySelector('.trello').appendChild(list);
+                }
+            });
+        </script>
+    </body>
+</html>
