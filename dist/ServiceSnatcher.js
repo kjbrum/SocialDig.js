@@ -44,6 +44,9 @@
                 case 'instagram':
                     self.url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + self.auth + '&callback=specialAPI';
                     break;
+                case 'pinterest':
+                    self.url = 'https://api.pinterest.com/v1/me/boards/?access_token=' + self.auth + '&fields=id,name,url,created_at,counts,description,creator,image,privacy,reason';
+                    break;
             }
 
 
