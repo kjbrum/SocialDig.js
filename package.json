@@ -1,0 +1,37 @@
+{
+  "name": "ServiceSnatcher.js",
+  "version": "0.1.0",
+  "description": "Query data from your social profiles with ease.",
+  "scripts": {
+    "browsersync": "browser-sync start --server --files 'css/style.css, js/*.min.js, **/*.html'",
+    "build": "npm run js:build && npm run css:build",
+    "css:autoprefix": "postcss --use autoprefixer --output css/style.css css/style.css",
+    "css:build": "npm run css:compile && npm run css:autoprefix",
+    "css:compile": "node-sass --output-style compressed scss/style.scss css/style.css",
+    "css:watch": "watch 'npm run css:build' scss",
+    "dev": "parallelshell 'npm run watch' 'npm run browsersync'",
+    "js:build": "npm run js:head && npm run js:main",
+    "js:head": "uglifyjs js/head/*.js -o js/head.min.js",
+    "js:main": "uglifyjs js/src/*.js -o js/main.min.js",
+    "js:watch": "watch 'npm run js:build' js/head js/src",
+    "watch": "parallelshell 'npm run js:watch' 'npm run css:watch'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kjbrum/ServiceSnatcher.js.git"
+  },
+  "author": "Kyle Brumm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kjbrum/ServiceSnatcher.js/issues"
+  },
+  "homepage": "https://github.com/kjbrum/ServiceSnatcher.js#readme",
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "node-sass": "latest",
+    "parallelshell": "latest",
+    "postcss-cli": "latest",
+    "uglify-js": "latest",
+    "watch": "latest"
+  }
+}

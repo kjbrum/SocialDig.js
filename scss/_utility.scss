@@ -1,0 +1,170 @@
+// Utility
+
+// Clearfix
+.cf {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+// Hide elements visually
+.hide-vis {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Hide and show elements
+.hide {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+@each $breakpoint, $widths in $breakpoints {
+    [class*="show-#{$breakpoint}"] {
+        display: none;
+    }
+
+    @media (min-width: map-get(map-get($breakpoints, $breakpoint), min)) {
+        .show-#{$breakpoint}-up {
+            display: block !important;
+        }
+
+        .hide-#{$breakpoint}-up {
+            display: none !important;
+        }
+    }
+
+    @media (min-width: map-get(map-get($breakpoints, $breakpoint), min)) and (max-width: map-get(map-get($breakpoints, $breakpoint), max)) {
+        .show-#{$breakpoint} {
+            display: block !important;
+        }
+
+        .hide-#{$breakpoint} {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: map-get(map-get($breakpoints, $breakpoint), max)) {
+        .show-#{$breakpoint}-down {
+            display: block !important;
+        }
+
+        .hide-#{$breakpoint}-down {
+            display: none !important;
+        }
+    }
+}
+
+// Floats
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+// Text align
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-top,
+.text-top * {
+    vertical-align: top;
+}
+
+.text-bottom,
+.text-bottom * {
+    vertical-align: bottom;
+}
+
+// Text color
+.text-primary-light {
+    color: $primary-light;
+}
+
+.text-primary {
+    color: $primary;
+}
+
+.text-primary-dark {
+    color: $primary-dark;
+}
+
+.text-secondary-light {
+    color: $secondary-light;
+}
+
+.text-secondary {
+    color: $secondary;
+}
+
+.text-secondary-dark {
+    color: $secondary-dark;
+}
+
+.text-gray-ultralight {
+    color: $gray-ultralight;
+}
+
+.text-gray-light {
+    color: $gray-light;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+.text-gray-dark {
+    color: $gray-dark;
+}
+
+.text-gray-ultradark {
+    color: $gray-ultradark;
+}
+
+.text-white {
+    color: $white;
+}
+
+.text-black {
+    color: $black;
+}
+
+.text-success {
+    color: $success;
+}
+
+.text-warn {
+    color: $warn;
+}
+
+.text-alert {
+    color: $alert;
+}
