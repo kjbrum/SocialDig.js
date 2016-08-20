@@ -15,7 +15,7 @@ http://kylebrumm.com/ServiceSnatcher.js/
     - [x] [CodePen (unofficial)](http://cpv2api.com/)
     - [x] [Dribbble](http://developer.dribbble.com/v1/)
     - [ ] [Flickr](https://www.flickr.com/services/api/)
-    - [ ] [Github](https://developer.github.com/v3/)
+    - [x] [Github](https://developer.github.com/v3/)
     - [ ] [Instagram](https://www.instagram.com/developer/)
     - [ ] [Last.fm](http://www.last.fm/api)
     - [x] [Pinterest](https://developers.pinterest.com/)
