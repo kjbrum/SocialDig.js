@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ServiceSnatcher.js | Flickr Demo</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Flickr</h4>
+                <div class="flickr"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/ServiceSnatcher.js"></script>
+        <script>
+            ServiceSnatcher({
+                selector: '.flickr',
+                service: 'flickr',
+                auth: 'AQKDKg8FMKxaU-qU7dl12FOLecu9FGxiWBx8vKxDVko6ayApLwAAAAA'
+            }, function(data) {
+                console.log(data);
+                // if (data.data.length > 0) {
+                //     var list = document.createElement('div');
+                //     list.className = 'g g-s-2 shots';
+
+                //     // Loop through the shots
+                //     data.data.forEach(function(el, idx, arr) {
+                //         if (idx < 4) {
+                //             var item = document.createElement('div');
+                //             item.className = 'gi shot';
+
+                //             item.innerHTML = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="100" href="' + el.url + '"></a>';
+
+                //             // Add the new item to the list
+                //             list.appendChild(item);
+                //         }
+                //     });
+
+                //     // Add the list to the page
+                //     document.querySelector('.flickr').appendChild(list);
+
+                //     // Add the new script
+                //     var pinScript = document.createElement('script');
+                //     pinScript.src = '//assets.flickr.com/js/pinit.js';
+                //     pinScript.async = true;
+                //     document.getElementsByTagName('body')[0].appendChild(pinScript);
+                // }
+            });
+        </script>
+    </body>
+</html>
