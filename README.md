@@ -23,6 +23,7 @@ http://kylebrumm.com/ServiceSnatcher.js/
     - [ ] [LinkedIn](https://developer.linkedin.com/docs/rest-api)
     - [x] [Pinterest](https://developers.pinterest.com)
     - [ ] [Reddit](https://www.reddit.com/dev/api)
+    - [ ] [Spotify](https://developer.spotify.com/web-api)
     - [x] [Trello](https://developers.trello.com)
     - [ ] [Tumblr](https://www.tumblr.com/docs/en/api/v2)
     - [ ] [Twitter](https://dev.twitter.com/rest/public)
