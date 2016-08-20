@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ServiceSnatcher.js | Github Demo</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Github</h4>
+                <div class="github"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/ServiceSnatcher.js"></script>
+        <script>
+            ServiceSnatcher({
+                selector: '.github',
+                service: 'github',
+                username: 'kjbrum'
+            }, function(data) {
+                if (data.length > 0) {
+                    var list = document.createElement('ul');
+                    list.className = 'repos';
+
+                    // Loop through the shots
+                    data.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            var item = document.createElement('li');
+                            item.className = 'repo';
+
+                            item.innerHTML = '<a href="' + el.html_url + '">' + el.full_name + '</a>';
+
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
+
+                    // Add the list to the page
+                    document.querySelector('.github').appendChild(list);
+                }
+            });
+        </script>
+    </body>
+</html>

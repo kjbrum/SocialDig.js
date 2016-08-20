@@ -26,13 +26,13 @@
             }, function(data) {
                 if (data.data.length > 0) {
                     var list = document.createElement('div');
-                    list.className = 'g g-s-2 shots';
+                    list.className = 'g g-s-2 pins';
 
-                    // Loop through the shots
+                    // Loop through the pins
                     data.data.forEach(function(el, idx, arr) {
                         if (idx < 4) {
                             var item = document.createElement('div');
-                            item.className = 'gi shot';
+                            item.className = 'gi pin';
 
                             item.innerHTML = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="100" href="' + el.url + '"></a>';
 

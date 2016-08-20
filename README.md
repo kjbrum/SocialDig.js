@@ -15,7 +15,7 @@ http://kylebrumm.com/ServiceSnatcher.js/
     - [x] CodePen (unofficial)
     - [x] Dribbble
     - [ ] Flickr
-    - [ ] Github
+    - [ ] [Github](https://developer.github.com/v3/)
     - [ ] Instagram
     - [ ] Last.fm
     - [x] Pinterest

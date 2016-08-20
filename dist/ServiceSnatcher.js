@@ -41,6 +41,9 @@
                 case 'dribbble':
                     self.url = 'https://api.dribbble.com/v1/users/' + self.username + '/shots';
                     break;
+                case 'github':
+                    self.url = 'https://api.github.com/users/' + self.username + '/repos?sort=updated';
+                    break;
                 case 'instagram':
                     self.url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + self.auth + '&callback=specialAPI';
                     break;
