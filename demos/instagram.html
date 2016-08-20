@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ServiceSnatcher.js | Instagram Demo</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Instagram</h4>
+                <div class="instagram"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/ServiceSnatcher.js"></script>
+        <script>
+            ServiceSnatcher({
+                service: 'instagram',
+                username: 'kjbrum',
+                auth: '175436735.49954d7.8ed44a3a4d8c49dd97c4219656c04e29'
+            }, function(data) {
+                console.log(data);
+            });
+        </script>
+    </body>
+</html>

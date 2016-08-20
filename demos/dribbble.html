@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ServiceSnatcher.js | Dribbble Demo</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Dribbble</h4>
+                <div class="dribbble"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/ServiceSnatcher.js"></script>
+        <script>
+            ServiceSnatcher({
+                selector: '.dribbble',
+                service: 'dribbble',
+                username: 'kjbrum',
+                auth: '305b1f7fb8e23dd9375061f6fa5e26263fdfc0ecbfb50f30379b01f98829f259'
+            }, function(data) {
+                if (data.length > 0) {
+                    var list = document.createElement('div');
+                    list.className = 'g g-s-2 shots';
+
+                    // Loop through the shots
+                    data.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            var item = document.createElement('div');
+                            item.className = 'gi shot';
+
+                            var shotHTML = '<a href="' + el.html_url + '" target="_blank"><img src="' + el.images.normal + '" alt="' + el.title + '" title="' + el.title + '"></a>';
+                            item.innerHTML = shotHTML;
+
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
+
+                    // Add the list to the page
+                    document.querySelector('.dribbble').appendChild(list);
+                }
+            });
+        </script>
+    </body>
+</html>

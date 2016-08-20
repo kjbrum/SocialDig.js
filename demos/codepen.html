@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ServiceSnatcher.js | CodePen Demo</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>CodePen</h4>
+                <div class="codepen"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/ServiceSnatcher.js"></script>
+        <script>
+            ServiceSnatcher({
+                selector: '.codepen',
+                service: 'codepen',
+                username: 'kjbrum',
+            }, function(data) {
+                console.log(data);
+
+                // if (data.photos.length > 0) {
+                //     var list = document.createElement('div');
+                //     list.className = 'g g-s-2 photos';
+
+                //     // Loop through the photos
+                //     data.photos.forEach(function(el, idx, arr) {
+                //         if (idx < 4) {
+                //             var item = document.createElement('div');
+                //             item.className = 'gi photo';
+
+                //             var photoHTML = '<a href="http://500px.com' + el.url + '" target="_blank"><img src="' + el.image_url + '" alt="' + el.name + '" title="' + el.name + '"></a>';
+                //             item.innerHTML = photoHTML;
+
+                //             // Add the new item to the list
+                //             list.appendChild(item);
+                //         }
+                //     });
+
+                //     // Add the list to the page
+                //     document.querySelector('.fivehundredpx').appendChild(list);
+                // }
+            });
+        </script>
+    </body>
+</html>

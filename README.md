@@ -11,13 +11,15 @@ http://kylebrumm.com/ServiceSnatcher.js/
 ## To-Do
 
 - [ ] Add additional social services
-    - [ ] Pinterest
-    - [ ] Instagram
-    - [ ] Github
-    - [ ] Last.fm
-    - [ ] Flickr
-    - [x] Dribbble
     - [x] 500px
+    - [ ] CodePen (unofficial)
+    - [x] Dribbble
+    - [ ] Flickr
+    - [ ] Github
+    - [ ] Instagram
+    - [ ] Last.fm
+    - [ ] Pinterest
+- [ ] Add the ability to pass what data you would like to query
 - [ ] Add the ability to pass in a "template"
 - [ ] Add caching with localstorage or cookies?
 
