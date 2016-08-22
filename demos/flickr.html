@@ -31,12 +31,11 @@
 
                     // Loop through the photos
                     data.photos.photo.forEach(function(el, idx, arr) {
-                        console.log(el);
                         if (idx < 4) {
                             var item = document.createElement('div');
                             item.className = 'gi photo';
 
-                            item.innerHTML = '<a href="http://www.flickr.com/photos/' + el.owner + '/' + el.id + '"><img src="http://www.flickr.com/photos/' + el.id + '_' + el.secret + '.jpg"><br>' + el.title + '</a>';
+                            item.innerHTML = '<a href="http://www.flickr.com/photos/' + el.owner + '/' + el.id + '" target="_blank"><img src="http://www.flickr.com/photos/' + el.id + '_' + el.secret + '.jpg"><br>' + el.title + '</a>';
 
                             // Add the new item to the list
                             list.appendChild(item);

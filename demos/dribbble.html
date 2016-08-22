@@ -35,7 +35,7 @@
                             var item = document.createElement('div');
                             item.className = 'gi shot';
 
-                            item.innerHTML = '<a href="' + el.html_url + '" target="_blank"><img src="' + el.images.normal + '" alt="' + el.title + '" title="' + el.title + '"></a>';
+                            item.innerHTML = '<a href="' + el.html_url + '" target="_blank"><img src="' + el.images.normal + '" alt="' + el.title + '" title="' + el.title + '"><br>' + el.title + '</a>';
 
                             // Add the new item to the list
                             list.appendChild(item);
