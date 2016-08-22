@@ -1,23 +1,23 @@
 /**
  *
  *  -----------------------------------
- *  ServiceSnatcher.js - v0.1.0
+ *  SocialDig.js - v0.1.0
  *  -----------------------------------
  *
  *  Query data from your social profiles with ease.
  *
- *  https://github.com/kjbrum/ServiceSnatcher.js
+ *  https://github.com/kjbrum/SocialDig.js
  *  @license Copyright (c) Kyle Brumm <http://kylebrumm.com>
  *
  */
 
 ;
 (function(global) {
-    var ServiceSnatcher = function(settings, callback) {
-        return new ServiceSnatcher.init(settings, callback);
+    var SocialDig = function(settings, callback) {
+        return new SocialDig.init(settings, callback);
     }
 
-    ServiceSnatcher.prototype = {
+    SocialDig.prototype = {
         /*********************************************
          * Query the data from the necessary service *
          *********************************************/
@@ -102,11 +102,11 @@
     /*************************************
      *  Initializing our function *
      *************************************/
-    ServiceSnatcher.init = function(settings, callback) {
+    SocialDig.init = function(settings, callback) {
         var self = this;
 
         // Setup settings
-        self.selector = settings.selector || '.service-snatcher'; // Selector for the container
+        self.selector = settings.selector || '.social-dig'; // Selector for the container
         self.service = settings.service || ''; // Service
         self.username = settings.username || ''; // Service username
         self.auth = settings.auth || ''; // Service authorization token/key
@@ -118,17 +118,17 @@
         self.queryData();
     }
 
-    ServiceSnatcher.transferer = function(data) {
+    SocialDig.transferer = function(data) {
         var self = this;
         callback(data);
     }
 
-    ServiceSnatcher.init.prototype = ServiceSnatcher.prototype;
+    SocialDig.init.prototype = SocialDig.prototype;
 
-    global.ServiceSnatcher = global.SS = ServiceSnatcher;
+    global.SocialDig = global.SD = SocialDig;
 
     var specialAPI = function(data) {
-        ServiceSnatcher.transferer(data);
+        SocialDig.transferer(data);
     }
     global.specialAPI = specialAPI;
 }(window));

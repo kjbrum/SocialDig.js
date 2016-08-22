@@ -1,11 +1,11 @@
-# ServiceSnatcher.js
+# SocialDig.js
 
 > Query data from your social profiles with ease.
 
 
 ## Documentation
 
-http://kylebrumm.com/ServiceSnatcher.js/
+http://kylebrumm.com/SocialDig.js/
 
 
 ## To-Do
@@ -44,4 +44,4 @@ http://kylebrumm.com/ServiceSnatcher.js/
 
 ## License
 
-Copyright © [Kyle Brumm](http://kylebrumm.com). ServiceSnatcher.js is free to use on whatever and may be redistributed under the terms specified in the [license](LICENSE.md).
+Copyright © [Kyle Brumm](http://kylebrumm.com). SocialDig.js is free to use on whatever and may be redistributed under the terms specified in the [license](LICENSE.md).

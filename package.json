@@ -1,5 +1,5 @@
 {
-  "name": "ServiceSnatcher.js",
+  "name": "SocialDig.js",
   "version": "0.1.0",
   "description": "Query data from your social profiles with ease.",
   "scripts": {
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kjbrum/ServiceSnatcher.js.git"
+    "url": "https://github.com/kjbrum/SocialDig.js.git"
   },
   "author": "Kyle Brumm",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kjbrum/ServiceSnatcher.js/issues"
+    "url": "https://github.com/kjbrum/SocialDig.js/issues"
   },
-  "homepage": "https://github.com/kjbrum/ServiceSnatcher.js#readme",
+  "homepage": "https://github.com/kjbrum/SocialDig.js#readme",
   "devDependencies": {
     "autoprefixer": "latest",
     "node-sass": "latest",
