@@ -74,7 +74,7 @@
             // Make the API request
             var special = ['instagram', 'behance'];
             if (special.indexOf(self.service) > -1) {
-                self.JSONP(self.url);
+                self.JSONP(self.url, self.cb);
             } else {
                 var request = new XMLHttpRequest();
                 request.open('GET', self.url, true);
@@ -115,14 +115,14 @@
         /**********************
          *  Handle JSONP APIs *
          **********************/
-        JSONP: function(url) {
+        JSONP: function(url, cb) {
             var self = this;
             var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
             window[callbackName] = function(data) {
                 self.data = data;
                 delete window[callbackName];
                 document.body.removeChild(script);
-                self.cb(self.data);
+                cb(self.data);
             };
 
             var script = document.createElement('script');
