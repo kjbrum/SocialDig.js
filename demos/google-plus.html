@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Google+ Demo | SocialDig.js</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Google+</h4>
+                <div class="google-plus"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/SocialDig.js"></script>
+        <script>
+            SocialDig({
+                selector: '.google-plus',
+                service: 'google-plus',
+                username: '102950045493550983271',
+                auth: 'AIzaSyBrdoeAPixnJ9bVNu_SUxGVlMxDkle9GhI'
+            }, function(data) {
+                if (data.items.length > 0) {
+                    var list = document.createElement('div');
+                    list.className = 'g g-s-2 posts';
+
+                    // Loop through the shots
+                    data.items.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            var item = document.createElement('div');
+                            item.className = 'gi post';
+
+                            item.innerHTML = '<div class="g-post" data-href="' + el.url + '"></div>';
+
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
+
+                    // Add the list to the page
+                    document.querySelector('.google-plus').appendChild(list);
+
+                    // Add the new script
+                    var plusScript = document.createElement('script');
+                    plusScript.src = 'https://apis.google.com/js/platform.js';
+                    plusScript.async = true;
+                    document.getElementsByTagName('body')[0].appendChild(plusScript);
+                }
+            });
+        </script>
+    </body>
+</html>

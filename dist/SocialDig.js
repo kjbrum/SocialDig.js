@@ -50,6 +50,9 @@
                 case 'github':
                     self.url = 'https://api.github.com/users/' + self.username + '/repos?sort=updated';
                     break;
+                case 'google-plus':
+                    self.url = 'https://www.googleapis.com/plus/v1/people/' + self.username + '/activities/public?key=' + self.auth;
+                    break;
                 case 'instagram':
                     self.url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + self.auth + '&callback=specialAPI';
                     break;
