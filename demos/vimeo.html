@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Vimeo Demo | SocialDig.js</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Vimeo</h4>
+                <div class="vimeo"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/SocialDig.js"></script>
+        <script>
+            SocialDig({
+                selector: '.vimeo',
+                service: 'vimeo',
+                user: 'user55766764',
+                auth: '1b74f20d3a4a9deda7709e3d0b542ad2'
+            }, function(data) {
+                console.log(data);
+                if (data.data.length > 0) {
+                    var list = document.createElement('div');
+                    list.className = 'g g-s-2 videos';
+
+                    // Loop through the shots
+                    data.data.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            var item = document.createElement('div');
+                            item.className = 'gi video';
+
+                            item.innerHTML = el.embed.html;
+
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
+
+                    // Add the list to the page
+                    document.querySelector('.vimeo').appendChild(list);
+                }
+            });
+        </script>
+    </body>
+</html>

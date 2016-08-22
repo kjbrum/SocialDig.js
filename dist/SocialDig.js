@@ -68,6 +68,9 @@
                 // case 'twitter':
                 //     self.url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + self.user;
                 //     break;
+                case 'vimeo':
+                    self.url = 'https://api.vimeo.com/users/' + self.user + '/videos';
+                    break;
             }
 
 
@@ -89,7 +92,7 @@
             request.open('GET', self.url, true);
 
             // Enable additional headers
-            var headers = ['dribbble', 'spotify'];
+            var headers = ['dribbble', 'spotify', 'vimeo'];
             if (headers.indexOf(self.service) > -1) {
                 request.setRequestHeader('Authorization', 'Bearer ' + self.auth);
             }

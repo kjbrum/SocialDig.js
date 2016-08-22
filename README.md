@@ -21,6 +21,7 @@ http://kylebrumm.com/SocialDig.js/
 - Pinterest - boards
 - Spotify - playlists
 - Trello - boards
+- Vimeo - videos
 
 
 ## To-Do
@@ -43,15 +44,17 @@ http://kylebrumm.com/SocialDig.js/
     - [x] [Trello](https://developers.trello.com)
     - [ ] [Tumblr](https://www.tumblr.com/docs/en/api/v2)
     - [ ] [Twitter](https://dev.twitter.com/rest/public) _(not possible?)_
-    - [ ] [Vimeo](https://developer.vimeo.com)
+    - [x] [Vimeo](https://developer.vimeo.com)
     - [ ] [VK](https://vk.com/dev)
-    - [ ] [YouTube](https://developers.google.com/youtube)
+    - [ ] [YouTube](https://developers.google.com/youtube) _(more complicated?)_
 - [ ] Add a loader or loading message
 - Additional settings
     - [ ] `count` - number of results to query
     - [ ] `cache` - amount of time to cache the results (localstorage or cookies?)
     - [ ] `template` - HTML structure using mustaches to fill in data
     - [ ] `data` - ability to pass what data you would like to query
+- [ ] Add more error handling?
+- [ ] Add cross-browser handling?
 
 
 ## Changelog
