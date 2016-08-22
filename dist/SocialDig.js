@@ -35,9 +35,9 @@
                 case '500px':
                     self.url = 'https://api.500px.com/v1/photos?consumer_key=' + self.auth + '&feature=user&username=' + self.user + '&image_size=440';
                     break;
-                // case 'behance':
-                //     self.url = 'http://www.behance.net/v2/users/' + self.user + '/projects?client_id=' + self.auth + '&callback=specialAPI';
-                //     break;
+                case 'behance':
+                    self.url = 'http://www.behance.net/v2/users/' + self.user + '/projects?client_id=' + self.auth;
+                    break;
                 case 'codepen':
                     self.url = 'http://cpv2api.com/pens/public/' + self.user;
                     break;
@@ -74,10 +74,10 @@
             // Make the API request
             var special = ['instagram', 'behance'];
             if (special.indexOf(self.service) > -1) {
-                var script = document.createElement('script');
-                script.src = self.url
-
-                document.getElementsByTagName('head')[0].appendChild(script);
+                SocialDig.jsonp(self.url).then(function(data){
+                    self.data = data;
+                    self.cb(self.data);
+                });
             } else {
                 var request = new XMLHttpRequest();
                 request.open('GET', self.url, true);
@@ -116,9 +116,9 @@
         }
     };
 
-    /*************************************
+    /******************************
      *  Initializing our function *
-     *************************************/
+     ******************************/
     SocialDig.init = function(settings, cb) {
         var self = this;
 
@@ -135,18 +135,29 @@
         self.queryData();
     }
 
-    SocialDig.transferer = function(data) {
-        var self = this;
-        this.cb(data);
+    /**********************
+     *  Handle JSONP APIs *
+     **********************/
+    SocialDig.jsonp = function(url) {
+        return new Promise(function(resolve, reject){
+            var id = '_' + Math.round(10000 * Math.random());
+            var callbackName = 'jsonp_callback_' + id;
+            window[callbackName] = function(data){
+                delete window[callbackName];
+                var ele = document.getElementById(id);
+                ele.parentNode.removeChild(ele);
+                resolve(data);
+            }
+
+            var src = url + '&callback=' + callbackName;
+            var script = document.createElement('script');
+            script.src = src;
+            script.id = id;
+            script.addEventListener('error', reject);
+            (document.getElementsByTagName('head')[0] || document.body || document.documentElement).appendChild(script);
+        })
     }
 
     SocialDig.init.prototype = SocialDig.prototype;
-
     global.SocialDig = global.SD = SocialDig;
-
-    var specialAPI = function(data) {
-        console.log(data);
-        SocialDig.transferer(data);
-    }
-    global.specialAPI = specialAPI;
 }(window));
