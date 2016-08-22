@@ -10,15 +10,17 @@ http://kylebrumm.com/SocialDig.js/
 
 ## Features
 
-- 500px - public photos
-- CodePen - public pens
-- Dribbble - public shots
-- Flickr - public photos
-- Github - public repos
+- 500px - photos
+- Behance - projects
+- CodePen - pens
+- Dribbble - shots
+- Flickr - photos
+- Github - repos
 - Google+ - posts
-- Pinterest - public boards
-- Spotify - public playlists
-- Trello - public boards
+- Instagram - photos
+- Pinterest - boards
+- Spotify - playlists
+- Trello - boards
 
 
 ## To-Do
@@ -26,13 +28,13 @@ http://kylebrumm.com/SocialDig.js/
 - Add additional social services
     - [x] [500px](https://github.com/500px/api-documentation)
     - [ ] [Bandcamp](https://bandcamp.com/developer)
-    - [ ] [Behance](https://www.behance.net/dev) _(partly working)_
+    - [x] [Behance](https://www.behance.net/dev)
     - [x] [CodePen (unofficial)](http://cpv2api.com)
     - [x] [Dribbble](http://developer.dribbble.com/v1)
     - [x] [Flickr](https://www.flickr.com/services/api)
     - [x] [Github](https://developer.github.com/v3)
     - [x] [Google+](https://developers.google.com/+/web/api/rest)
-    - [ ] [Instagram](https://www.instagram.com/developer) _(partly working)_
+    - [x] [Instagram](https://www.instagram.com/developer)
     - [ ] [Last.fm](http://www.last.fm/api)
     - [ ] [LinkedIn](https://developer.linkedin.com/docs/rest-api) _(more complicated?)_
     - [x] [Pinterest](https://developers.pinterest.com)

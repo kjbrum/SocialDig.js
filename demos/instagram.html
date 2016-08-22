@@ -24,7 +24,32 @@
                 user: 'kjbrum',
                 auth: '175436735.49954d7.8ed44a3a4d8c49dd97c4219656c04e29'
             }, function(data) {
-                console.log(data);
+                if (data.data.length > 0) {
+                    var list = document.createElement('div');
+                    list.className = 'g g-s-2 photos';
+
+                    // Loop through the photos
+                    data.data.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            // console.log(el);
+                            var item = document.createElement('div');
+                            item.className = 'gi photo';
+
+                            var caption = '';
+                            if (el.caption) {
+                                caption = '<br>' + el.caption.text;
+                            }
+
+                            item.innerHTML = '<a href="' + el.link + '" target="_blank"><img src="' + el.images.standard_resolution.url + '">' + caption + '</a>';
+
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
+
+                    // Add the list to the page
+                    document.querySelector('.instagram').appendChild(list);
+                }
             });
         </script>
     </body>
