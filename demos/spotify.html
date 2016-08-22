@@ -22,35 +22,29 @@
             SocialDig({
                 selector: '.spotify',
                 service: 'spotify',
-                auth: 'xxxxx'
+                user: 'kjbrum',
+                auth: 'BQClrlAf1SbN9CRabldo911abWtHgYKDzsHiXO3378ooHooBTEkUXTfzRpmzlpSO_DNejfT2jcQEYuYtsnq8XegQQ5axrKZ9Hb94Mf6D8XQj2oWH5b8_yksC0NEQYWEHrZF9KSGFaW7GdTtFpCQUc1AkJ4z4WA'
             }, function(data) {
-                console.log(data);
-                // if (data.data.length > 0) {
-                //     var list = document.createElement('div');
-                //     list.className = 'g g-s-2 songs';
+                if (data.items.length > 0) {
+                    var list = document.createElement('div');
+                    list.className = 'g g-s-2 playlists';
 
-                //     // Loop through the pins
-                //     data.data.forEach(function(el, idx, arr) {
-                //         if (idx < 4) {
-                //             var item = document.createElement('div');
-                //             item.className = 'gi song';
+                    // Loop through the pins
+                    data.items.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            var item = document.createElement('div');
+                            item.className = 'gi playlist';
 
-                //             item.innerHTML = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="100" href="' + el.url + '"></a>';
+                            item.innerHTML = '<iframe src="https://embed.spotify.com/?uri=' + el.uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>';
 
-                //             // Add the new item to the list
-                //             list.appendChild(item);
-                //         }
-                //     });
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
 
-                //     // Add the list to the page
-                //     document.querySelector('.spotify').appendChild(list);
-
-                //     // Add the new script
-                //     var pinScript = document.createElement('script');
-                //     pinScript.src = '//assets.spotify.com/js/pinit.js';
-                //     pinScript.async = true;
-                //     document.getElementsByTagName('body')[0].appendChild(pinScript);
-                // }
+                    // Add the list to the page
+                    document.querySelector('.spotify').appendChild(list);
+                }
             });
         </script>
     </body>

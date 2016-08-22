@@ -8,6 +8,19 @@
 http://kylebrumm.com/SocialDig.js/
 
 
+## Features
+
+- 500px - public photos
+- CodePen - public pens
+- Dribbble - public shots
+- Flickr - public photos
+- Github - public repos
+- Google+ - posts
+- Pinterest - public boards
+- Spotify - public playlists
+- Trello - public boards
+
+
 ## To-Do
 
 - Add additional social services
@@ -24,7 +37,7 @@ http://kylebrumm.com/SocialDig.js/
     - [ ] [LinkedIn](https://developer.linkedin.com/docs/rest-api) _(more complicated?)_
     - [x] [Pinterest](https://developers.pinterest.com)
     - [ ] [Reddit](https://www.reddit.com/dev/api)
-    - [ ] [Spotify](https://developer.spotify.com/web-api)
+    - [x] [Spotify](https://developer.spotify.com/web-api)
     - [x] [Trello](https://developers.trello.com)
     - [ ] [Tumblr](https://www.tumblr.com/docs/en/api/v2)
     - [ ] [Twitter](https://dev.twitter.com/rest/public) _(not possible?)_

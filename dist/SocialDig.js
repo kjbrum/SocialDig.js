@@ -35,9 +35,9 @@
                 case '500px':
                     self.url = 'https://api.500px.com/v1/photos?consumer_key=' + self.auth + '&feature=user&username=' + self.user + '&image_size=440';
                     break;
-                case 'behance':
-                    self.url = 'http://www.behance.net/v2/users/' + self.user + '/projects?client_id=' + self.auth + '&callback=specialAPI';
-                    break;
+                // case 'behance':
+                //     self.url = 'http://www.behance.net/v2/users/' + self.user + '/projects?client_id=' + self.auth + '&callback=specialAPI';
+                //     break;
                 case 'codepen':
                     self.url = 'http://cpv2api.com/pens/public/' + self.user;
                     break;
@@ -53,11 +53,14 @@
                 case 'google-plus':
                     self.url = 'https://www.googleapis.com/plus/v1/people/' + self.user + '/activities/public?key=' + self.auth;
                     break;
-                case 'instagram':
-                    self.url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + self.auth + '&callback=specialAPI';
-                    break;
+                // case 'instagram':
+                //     self.url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + self.auth + '&callback=specialAPI';
+                //     break;
                 case 'pinterest':
                     self.url = 'https://api.pinterest.com/v1/me/boards/?access_token=' + self.auth + '&fields=id,name,url,created_at,counts,description,creator,image,privacy,reason';
+                    break;
+                case 'spotify':
+                    self.url = 'https://api.spotify.com/v1/users/' + self.user + '/playlists';
                     break;
                 case 'trello':
                     self.url = 'https://api.trello.com/1/members/' + self.user  + '/boards';
@@ -80,7 +83,8 @@
                 request.open('GET', self.url, true);
 
                 // Enable additional headers
-                if (self.service == 'dribbble') {
+                var headers = ['dribbble', 'spotify'];
+                if (headers.indexOf(self.service) > -1) {
                     request.setRequestHeader('Authorization', 'Bearer ' + self.auth);
                 }
 
