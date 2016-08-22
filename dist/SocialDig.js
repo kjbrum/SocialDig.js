@@ -44,6 +44,9 @@
                 case 'dribbble':
                     self.url = 'https://api.dribbble.com/v1/users/' + self.username + '/shots';
                     break;
+                case 'flickr':
+                    self.url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=' + self.auth + '&user_id=' + self.username + '&format=json&nojsoncallback=1';
+                    break;
                 case 'github':
                     self.url = 'https://api.github.com/users/' + self.username + '/repos?sort=updated';
                     break;

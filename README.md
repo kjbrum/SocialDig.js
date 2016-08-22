@@ -16,7 +16,7 @@ http://kylebrumm.com/SocialDig.js/
     - [ ] [Behance](https://www.behance.net/dev) _(partly working)_
     - [x] [CodePen (unofficial)](http://cpv2api.com)
     - [x] [Dribbble](http://developer.dribbble.com/v1)
-    - [ ] [Flickr](https://www.flickr.com/services/api)
+    - [x] [Flickr](https://www.flickr.com/services/api)
     - [x] [Github](https://developer.github.com/v3)
     - [ ] [Google+](https://developers.google.com/+/web/api/rest)
     - [ ] [Instagram](https://www.instagram.com/developer) _(partly working)_
