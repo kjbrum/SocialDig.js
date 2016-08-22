@@ -74,7 +74,7 @@
             // Make the API request
             var special = ['instagram', 'behance'];
             if (special.indexOf(self.service) > -1) {
-                SocialDig.jsonp(self.url).then(function(data){
+                self.JSONP(self.url).then(function(data){
                     self.data = data;
                     self.cb(self.data);
                 });
@@ -113,6 +113,29 @@
                 // Send the request
                 request.send();
             }
+        },
+
+        /**********************
+         *  Handle JSONP APIs *
+         **********************/
+        JSONP: function(url) {
+            return new Promise(function(resolve, reject){
+                var id = '_' + Math.round(10000 * Math.random());
+                var callbackName = 'jsonp_callback_' + id;
+                window[callbackName] = function(data){
+                    delete window[callbackName];
+                    var ele = document.getElementById(id);
+                    ele.parentNode.removeChild(ele);
+                    resolve(data);
+                }
+
+                var src = url + '&callback=' + callbackName;
+                var script = document.createElement('script');
+                script.src = src;
+                script.id = id;
+                script.addEventListener('error', reject);
+                (document.getElementsByTagName('head')[0] || document.body || document.documentElement).appendChild(script);
+            })
         }
     };
 
@@ -133,30 +156,7 @@
 
         // Query the data
         self.queryData();
-    }
-
-    /**********************
-     *  Handle JSONP APIs *
-     **********************/
-    SocialDig.jsonp = function(url) {
-        return new Promise(function(resolve, reject){
-            var id = '_' + Math.round(10000 * Math.random());
-            var callbackName = 'jsonp_callback_' + id;
-            window[callbackName] = function(data){
-                delete window[callbackName];
-                var ele = document.getElementById(id);
-                ele.parentNode.removeChild(ele);
-                resolve(data);
-            }
-
-            var src = url + '&callback=' + callbackName;
-            var script = document.createElement('script');
-            script.src = src;
-            script.id = id;
-            script.addEventListener('error', reject);
-            (document.getElementsByTagName('head')[0] || document.body || document.documentElement).appendChild(script);
-        })
-    }
+    };
 
     SocialDig.init.prototype = SocialDig.prototype;
     global.SocialDig = global.SD = SocialDig;
