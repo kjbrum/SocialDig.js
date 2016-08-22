@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Behance Demo | SocialDig.js</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Behance</h4>
+                <div class="behance"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/SocialDig.js"></script>
+        <script>
+            SocialDig({
+                selector: '.behance',
+                service: 'behance',
+                username: 'kjbrum',
+                auth: 'vNOs31tuqdR0KQsN9gMnHy4Z3e1w1qS3'
+            }, function(data) {
+                console.log(data);
+                // if (data.length > 0) {
+                //     var list = document.createElement('div');
+                //     list.className = 'g g-s-2 shots';
+
+                //     // Loop through the shots
+                //     data.forEach(function(el, idx, arr) {
+                //         if (idx < 4) {
+                //             var item = document.createElement('div');
+                //             item.className = 'gi shot';
+
+                //             item.innerHTML = '<a href="' + el.html_url + '" target="_blank"><img src="' + el.images.normal + '" alt="' + el.title + '" title="' + el.title + '"></a>';
+
+                //             // Add the new item to the list
+                //             list.appendChild(item);
+                //         }
+                //     });
+
+                //     // Add the list to the page
+                //     document.querySelector('.behance').appendChild(list);
+                // }
+            });
+        </script>
+    </body>
+</html>

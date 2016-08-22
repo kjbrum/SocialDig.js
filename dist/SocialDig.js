@@ -13,8 +13,8 @@
 
 ;
 (function(global) {
-    var SocialDig = function(settings, callback) {
-        return new SocialDig.init(settings, callback);
+    var SocialDig = function(settings, cb) {
+        return new SocialDig.init(settings, cb);
     }
 
     SocialDig.prototype = {
@@ -34,6 +34,9 @@
             switch (self.service) {
                 case '500px':
                     self.url = 'https://api.500px.com/v1/photos?consumer_key=' + self.auth + '&feature=user&username=' + self.username + '&image_size=440';
+                    break;
+                case 'behance':
+                    self.url = 'http://www.behance.net/v2/users/' + self.username + '/projects?client_id=' + self.auth + '&callback=specialAPI';
                     break;
                 case 'codepen':
                     self.url = 'http://cpv2api.com/pens/public/' + self.username;
@@ -57,7 +60,8 @@
 
 
             // Make the API request
-            if (self.service == 'instagram') {
+            var special = ['instagram', 'behance'];
+            if (special.indexOf(self.service) > -1) {
                 var script = document.createElement('script');
                 script.src = self.url
 
@@ -80,7 +84,7 @@
                     // Check the status of the request
                     if (request.status >= 200 && request.status < 400) {
                         // Return the found data
-                        self.callback(self.data);
+                        self.cb(self.data);
                     } else {
                         // Error from the server
                         throw self.data.message;
@@ -102,7 +106,7 @@
     /*************************************
      *  Initializing our function *
      *************************************/
-    SocialDig.init = function(settings, callback) {
+    SocialDig.init = function(settings, cb) {
         var self = this;
 
         // Setup settings
@@ -112,7 +116,7 @@
         self.auth = settings.auth || ''; // Service authorization token/key
         self.url = ''; // Service API URL
         self.data = ''; // Service data from server
-        self.callback = callback; // Service callback
+        self.cb = cb; // Service callback
 
         // Query the data
         self.queryData();
@@ -120,7 +124,7 @@
 
     SocialDig.transferer = function(data) {
         var self = this;
-        callback(data);
+        cb(data);
     }
 
     SocialDig.init.prototype = SocialDig.prototype;
@@ -128,6 +132,7 @@
     global.SocialDig = global.SD = SocialDig;
 
     var specialAPI = function(data) {
+        console.log(data);
         SocialDig.transferer(data);
     }
     global.specialAPI = specialAPI;
