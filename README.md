@@ -10,16 +10,16 @@ http://kylebrumm.com/SocialDig.js/
 
 ## To-Do
 
-- [ ] Add additional social services
+- Add additional social services
     - [x] [500px](https://github.com/500px/api-documentation)
     - [ ] [Bandcamp](https://bandcamp.com/developer)
-    - [ ] [Behance](https://www.behance.net/dev)
+    - [ ] [Behance](https://www.behance.net/dev) _(partly working)_
     - [x] [CodePen (unofficial)](http://cpv2api.com)
     - [x] [Dribbble](http://developer.dribbble.com/v1)
     - [ ] [Flickr](https://www.flickr.com/services/api)
     - [x] [Github](https://developer.github.com/v3)
     - [ ] [Google+](https://developers.google.com/+/web/api/rest)
-    - [ ] [Instagram](https://www.instagram.com/developer)
+    - [ ] [Instagram](https://www.instagram.com/developer) _(partly working)_
     - [ ] [Last.fm](http://www.last.fm/api)
     - [ ] [LinkedIn](https://developer.linkedin.com/docs/rest-api)
     - [x] [Pinterest](https://developers.pinterest.com)
@@ -31,9 +31,11 @@ http://kylebrumm.com/SocialDig.js/
     - [ ] [Vimeo](https://developer.vimeo.com)
     - [ ] [VK](https://vk.com/dev)
     - [ ] [YouTube](https://developers.google.com/youtube)
-- [ ] Add the ability to pass what data you would like to query
-- [ ] Add the ability to pass in a "template"
-- [ ] Add caching with localstorage or cookies?
+- Additional settings
+    - [ ] `count` - number of results to query
+    - [ ] `cache` - amount of time to cache the results (localstorage or cookies?)
+    - [ ] `template` - HTML structure using mustaches to fill in data
+    - [ ] `data` - ability to pass what data you would like to query
 
 
 ## Changelog

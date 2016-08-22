@@ -124,7 +124,7 @@
 
     SocialDig.transferer = function(data) {
         var self = this;
-        cb(data);
+        this.cb(data);
     }
 
     SocialDig.init.prototype = SocialDig.prototype;
