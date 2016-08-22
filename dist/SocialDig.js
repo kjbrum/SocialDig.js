@@ -62,6 +62,9 @@
                 case 'trello':
                     self.url = 'https://api.trello.com/1/members/' + self.user  + '/boards';
                     break;
+                // case 'twitter':
+                //     self.url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + self.user;
+                //     break;
             }
 
 
