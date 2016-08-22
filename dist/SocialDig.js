@@ -74,48 +74,56 @@
             // Make the API request
             var special = ['instagram', 'behance'];
             if (special.indexOf(self.service) > -1) {
-                self.JSONP(self.url, self.cb);
+                self.JSONP(self.cb);
             } else {
-                var request = new XMLHttpRequest();
-                request.open('GET', self.url, true);
-
-                // Enable additional headers
-                var headers = ['dribbble', 'spotify'];
-                if (headers.indexOf(self.service) > -1) {
-                    request.setRequestHeader('Authorization', 'Bearer ' + self.auth);
-                }
-
-                // Check for a successful response
-                request.onload = function() {
-                    // Parse the response
-                    var data = JSON.parse(request.responseText);
-                    self.data = data;
-
-                    // Check the status of the request
-                    if (request.status >= 200 && request.status < 400) {
-                        // Return the found data
-                        self.cb(self.data);
-                    } else {
-                        // Error from the server
-                        throw self.data.message;
-                    }
-                };
-
-                // Handle any errors
-                request.onerror = function() {
-                    // Connection error
-                    throw 'connection error';
-                };
-
-                // Send the request
-                request.send();
+                self.makeRequest(self.cb);
             }
         },
 
-        /**********************
-         *  Handle JSONP APIs *
-         **********************/
-        JSONP: function(url, cb) {
+        /**********************************************
+         * Make our HTTP request to get the JSON data *
+         **********************************************/
+        makeRequest: function(cb) {
+            var self = this;
+            var request = new XMLHttpRequest();
+            request.open('GET', self.url, true);
+
+            // Enable additional headers
+            var headers = ['dribbble', 'spotify'];
+            if (headers.indexOf(self.service) > -1) {
+                request.setRequestHeader('Authorization', 'Bearer ' + self.auth);
+            }
+
+            // Check for a successful response
+            request.onload = function() {
+                // Parse the response
+                var data = JSON.parse(request.responseText);
+                self.data = data;
+
+                // Check the status of the request
+                if (request.status >= 200 && request.status < 400) {
+                    // Return the found data
+                    cb(self.data);
+                } else {
+                    // Error from the server
+                    throw self.data.message;
+                }
+            };
+
+            // Handle any errors
+            request.onerror = function() {
+                // Connection error
+                throw 'connection error';
+            };
+
+            // Send the request
+            request.send();
+        },
+
+        /**********************************
+         *  Handle our special JSONP APIs *
+         **********************************/
+        JSONP: function(cb) {
             var self = this;
             var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
             window[callbackName] = function(data) {
@@ -126,10 +134,9 @@
             };
 
             var script = document.createElement('script');
-            script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+            script.src = self.url + (self.url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
             document.body.appendChild(script);
         }
-
     };
 
     /******************************
