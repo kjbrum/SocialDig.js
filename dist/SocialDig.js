@@ -73,7 +73,6 @@
                     break;
             }
 
-
             // Make the API request
             var special = ['instagram', 'behance'];
             if (special.indexOf(self.service) > -1) {
