@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Last.fm Demo | SocialDig.js</title>
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="section section--demo">
+            <div class="container">
+                <h4>Last.fm</h4>
+                <div class="lastfm"></div>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="../dist/SocialDig.js"></script>
+        <script>
+            SocialDig({
+                selector: '.lastfm',
+                service: 'lastfm',
+                user: 'kjbrum',
+                auth: 'da3d6b59d72cbd535ce2405ec13b97be'
+            }, function(data) {
+                console.log(data);
+                if (data.recenttracks.track.length > 0) {
+                    var list = document.createElement('div');
+                    list.className = 'g g-s-2 songs';
+
+                    // Loop through the songs
+                    data.recenttracks.track.forEach(function(el, idx, arr) {
+                        if (idx < 4) {
+                            console.log(el);
+                            var item = document.createElement('div');
+                            item.className = 'gi song';
+
+                            item.innerHTML = '<a href="' + el.url + '" target="_blank"><img src="' + el.image[3]['#text'] + '"><br>' + el.name + '</a><br><small>' + el.artist['#text'] + '</small>';
+
+                            // Add the new item to the list
+                            list.appendChild(item);
+                        }
+                    });
+
+                    // Add the list to the page
+                    document.querySelector('.lastfm').appendChild(list);
+                }
+            });
+        </script>
+    </body>
+</html>

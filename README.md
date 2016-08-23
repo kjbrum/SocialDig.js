@@ -36,7 +36,7 @@ http://kylebrumm.com/SocialDig.js/
     - [x] [Github](https://developer.github.com/v3)
     - [x] [Google+](https://developers.google.com/+/web/api/rest)
     - [x] [Instagram](https://www.instagram.com/developer)
-    - [ ] [Last.fm](http://www.last.fm/api)
+    - [x] [Last.fm](http://www.last.fm/api)
     - [ ] [LinkedIn](https://developer.linkedin.com/docs/rest-api) _(more complicated?)_
     - [x] [Pinterest](https://developers.pinterest.com)
     - [ ] [Reddit](https://www.reddit.com/dev/api)
