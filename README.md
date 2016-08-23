@@ -18,6 +18,7 @@ http://kylebrumm.com/SocialDig.js/
 - Github - repos
 - Google+ - posts
 - Instagram - photos
+- Last.fm - recent songs
 - Pinterest - boards
 - Spotify - playlists
 - Trello - boards
