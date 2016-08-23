@@ -30,15 +30,16 @@
                     var list = document.createElement('div');
                     list.className = 'g g-s-2 videos';
 
-                    // Loop through the shots
+                    // Loop through the videos
                     data.data.forEach(function(el, idx, arr) {
                         if (idx < 4) {
                             var item = document.createElement('div');
                             item.className = 'gi video';
 
-                            // item.innerHTML = el.embed.html;
                             var id_pieces = el.uri.split('/');
                             var id = id_pieces[id_pieces.length-1]
+
+                            // item.innerHTML = el.embed.html;
                             item.innerHTML = '<iframe src="https://player.vimeo.com/video/' + id + '?badge=0&autopause=0&player_id=0" width="100%" height="350" frameborder="0" title="' + el.name + '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 
                             // Add the new item to the list
