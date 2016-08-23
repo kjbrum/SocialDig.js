@@ -30,52 +30,6 @@
                 container = document.querySelector(self.selector);
             }
 
-            // Build the request URL
-            switch (self.service) {
-                case '500px':
-                    self.url = 'https://api.500px.com/v1/photos?consumer_key=' + self.auth + '&feature=user&username=' + self.user + '&image_size=440';
-                    break;
-                case 'behance':
-                    self.url = 'http://www.behance.net/v2/users/' + self.user + '/projects?client_id=' + self.auth;
-                    break;
-                case 'codepen':
-                    self.url = 'http://cpv2api.com/pens/public/' + self.user;
-                    break;
-                case 'dribbble':
-                    self.url = 'https://api.dribbble.com/v1/users/' + self.user + '/shots';
-                    break;
-                case 'flickr':
-                    self.url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=' + self.auth + '&user_id=' + self.user + '&format=json&nojsoncallback=1';
-                    break;
-                case 'github':
-                    self.url = 'https://api.github.com/users/' + self.user + '/repos?sort=updated';
-                    break;
-                case 'google-plus':
-                    self.url = 'https://www.googleapis.com/plus/v1/people/' + self.user + '/activities/public?key=' + self.auth;
-                    break;
-                case 'instagram':
-                    self.url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + self.auth;
-                    break;
-                case 'lastfm':
-                    self.url = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + self.user + '&api_key=' + self.auth + '&format=json';
-                    break;
-                case 'pinterest':
-                    self.url = 'https://api.pinterest.com/v1/me/boards/?access_token=' + self.auth + '&fields=id,name,url,created_at,counts,description,creator,image,privacy,reason';
-                    break;
-                case 'spotify':
-                    self.url = 'https://api.spotify.com/v1/users/' + self.user + '/playlists';
-                    break;
-                case 'trello':
-                    self.url = 'https://api.trello.com/1/members/' + self.user  + '/boards';
-                    break;
-                // case 'twitter':
-                //     self.url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + self.user;
-                //     break;
-                case 'vimeo':
-                    self.url = 'https://api.vimeo.com/users/' + self.user + '/videos';
-                    break;
-            }
-
             // Make the API request
             var special = ['instagram', 'behance'];
             if (special.indexOf(self.service) > -1) {
@@ -155,7 +109,26 @@
         self.service = settings.service || ''; // Service
         self.user = settings.user || ''; // Service user (username/id/etc...)
         self.auth = settings.auth || ''; // Service authorization token/key
-        self.url = ''; // Service API URL
+
+        // Add all the available services
+        self.services = {
+            '500px': 'https://api.500px.com/v1/photos?consumer_key=' + self.auth + '&feature=user&username=' + self.user + '&image_size=440',
+            'behance': 'http://www.behance.net/v2/users/' + self.user + '/projects?client_id=' + self.auth,
+            'codepen': 'http://cpv2api.com/pens/public/' + self.user,
+            'dribbble': 'https://api.dribbble.com/v1/users/' + self.user + '/shots',
+            'flickr': 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=' + self.auth + '&user_id=' + self.user + '&format=json&nojsoncallback=1',
+            'github': 'https://api.github.com/users/' + self.user + '/repos?sort=updated',
+            'google-plus': 'https://www.googleapis.com/plus/v1/people/' + self.user + '/activities/public?key=' + self.auth,
+            'instagram': 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + self.auth,
+            'lastfm': 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + self.user + '&api_key=' + self.auth + '&format=json',
+            'pinterest': 'https://api.pinterest.com/v1/me/boards/?access_token=' + self.auth + '&fields=id,name,url,created_at,counts,description,creator,image,privacy,reason',
+            'spotify': 'https://api.spotify.com/v1/users/' + self.user + '/playlists',
+            'trello': 'https://api.trello.com/1/members/' + self.user  + '/boards',
+            'twitter': 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + self.user,
+            'vimeo': 'https://api.vimeo.com/users/' + self.user + '/videos'
+        };
+
+        self.url = self.services[self.service]; // Service API URL
         self.data = ''; // Service data from server
         self.cb = cb; // Service callback
 
