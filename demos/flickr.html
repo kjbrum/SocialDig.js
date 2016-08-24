@@ -23,11 +23,13 @@
                 selector: '.flickr',
                 service: 'flickr',
                 user: '144711721@N05',
-                auth: '3f9fe783e105a01013fbe2d4de25ce17'
+                auth: 'c8c9ecd7b638ef14fe9f36b8c40762cc',
+                cacheLimit: 0
             }, function(data) {
                 if (data.photos.photo.length > 0) {
                     var list = document.createElement('div');
                     list.className = 'g g-s-2 photos';
+
 
                     // Loop through the photos
                     data.photos.photo.forEach(function(el, idx, arr) {

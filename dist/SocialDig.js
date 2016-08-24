@@ -85,11 +85,16 @@
                 var data = JSON.parse(request.responseText);
                 self.data = data;
 
-                // Save the new data to localStorage
-                self.cacheData();
 
                 // Check the status of the request
-                if (request.status >= 200 && request.status < 400) {
+                var status = data.code || request.status;
+                console.log(request);
+                console.log(status);
+                console.log(self.cacheLimit);
+                if (status >= 200 && status < 400) {
+                    // Save the new data to localStorage
+                    self.cacheData();
+
                     // Run our callback function
                     cb(self.data);
                 } else {
@@ -162,7 +167,13 @@
         self.service = settings.service || ''; // Service
         self.user = settings.user || ''; // Service user (username/id/etc...)
         self.auth = settings.auth || ''; // Service authorization token/key
-        self.cacheLimit = settings.cacheLimit || '5'; // Number of minutes to cache results
+
+        // Number of minutes to cache results
+        if (settings.cacheLimit == null) {
+            self.cacheLimit = 5;
+        } else {
+            self.cacheLimit = settings.cacheLimit;
+        }
 
         // Add all the available services
         self.services = {
