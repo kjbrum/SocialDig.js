@@ -43,7 +43,7 @@ http://kylebrumm.com/SocialDig.js/
     - [ ] [Reddit](https://www.reddit.com/dev/api)
     - [x] [Spotify](https://developer.spotify.com/web-api)
     - [x] [Trello](https://developers.trello.com)
-    - [ ] [Tumblr](https://www.tumblr.com/docs/en/api/v2)
+    - [ ] [Tumblr](https://www.tumblr.com/docs/en/api/v2) _(need to figure out embedding)_
     - [ ] [Twitter](https://dev.twitter.com/rest/public) _(not possible?)_
     - [x] [Vimeo](https://developer.vimeo.com)
     - [ ] [VK](https://vk.com/dev)
