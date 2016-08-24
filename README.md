@@ -26,6 +26,16 @@ http://kylebrumm.com/SocialDig.js/
 - Vimeo - videos
 
 
+## Options
+
+|Option|Type|Default|Description|
+|---|---|---|---|
+selector|string\|element|'.social-dig'|Selector for the container
+service|string|''|Service
+user|string|''|Service user (username/id/etc...)
+auth|string|''|Service authorization token/key
+
+
 ## To-Do
 
 - [ ] Add more error handling
