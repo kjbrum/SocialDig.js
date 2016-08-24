@@ -9,3 +9,12 @@ a {
         color: $secondary-light;
     }
 }
+
+.view-more {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background: $primary;
+}

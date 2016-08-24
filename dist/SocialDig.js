@@ -88,9 +88,6 @@
 
                 // Check the status of the request
                 var status = data.code || request.status;
-                console.log(request);
-                console.log(status);
-                console.log(self.cacheLimit);
                 if (status >= 200 && status < 400) {
                     // Save the new data to localStorage
                     self.cacheData();
