@@ -18,6 +18,40 @@
     }
 
     SocialDig.prototype = {
+        saveCache: function() {
+            var self = this;
+            var now = new Date().getTime();
+            var newCacheData = JSON.stringify({
+                time: now,
+                data: self.data
+            });
+
+            // Save new data into localStorage
+            localStorage.setItem(self.service, newCacheData);
+        },
+
+        /************************************
+         * Handle caching the returned data *
+         ************************************/
+        checkCache: function() {
+            var self = this;
+
+            var now = new Date().getTime();
+            var foundCache = false;
+            var cache = JSON.parse(localStorage.getItem(self.service));
+
+            if (cache) {
+                if ((now - cache.time) < (self.cacheLimit * 60000)) {
+                    self.data = cache.data;
+                    foundCache = true;
+                } else {
+                    localStorage.removeItem(self.service);
+                }
+            }
+
+            return foundCache;
+        },
+
         /*********************************************
          * Query the data from the necessary service *
          *********************************************/
@@ -30,12 +64,18 @@
                 container = document.querySelector(self.selector);
             }
 
-            // Make the API request
-            var special = ['instagram', 'behance', 'tumblr'];
-            if (special.indexOf(self.service) > -1) {
-                self.JSONP(self.cb);
+            // Check for cached data
+            if (self.checkCache()) {
+                // Return the cached data
+                self.cb(self.data);
             } else {
-                self.makeRequest(self.cb);
+                // Make the API request
+                var special = ['instagram', 'behance', 'tumblr'];
+                if (special.indexOf(self.service) > -1) {
+                    self.JSONP(self.cb);
+                } else {
+                    self.makeRequest(self.cb);
+                }
             }
         },
 
@@ -59,9 +99,12 @@
                 var data = JSON.parse(request.responseText);
                 self.data = data;
 
+                // Save the new data to localStorage
+                self.saveCache();
+
                 // Check the status of the request
                 if (request.status >= 200 && request.status < 400) {
-                    // Return the found data
+                    // Run our callback function
                     cb(self.data);
                 } else {
                     // Error from the server
@@ -87,8 +130,15 @@
             var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
             window[callbackName] = function(data) {
                 self.data = data;
+
+                // Save the new data to localStorage
+                self.saveCache();
+
+                // Cleanup
                 delete window[callbackName];
                 document.body.removeChild(script);
+
+                // Run our callback function
                 cb(self.data);
             };
 
@@ -109,6 +159,7 @@
         self.service = settings.service || ''; // Service
         self.user = settings.user || ''; // Service user (username/id/etc...)
         self.auth = settings.auth || ''; // Service authorization token/key
+        self.cacheLimit = settings.cacheLimit || '5'; // Number of minutes to cache results
 
         // Add all the available services
         self.services = {
@@ -123,7 +174,7 @@
             'lastfm': 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + self.user + '&api_key=' + self.auth + '&format=json',
             'pinterest': 'https://api.pinterest.com/v1/me/boards/?access_token=' + self.auth + '&fields=id,name,url,created_at,counts,description,creator,image,privacy,reason',
             'spotify': 'https://api.spotify.com/v1/users/' + self.user + '/playlists',
-            'trello': 'https://api.trello.com/1/members/' + self.user  + '/boards',
+            'trello': 'https://api.trello.com/1/members/' + self.user + '/boards',
             'tumblr': 'https://api.tumblr.com/v2/blog/' + self.user + '.tumblr.com/posts?api_key=' + self.auth,
             'twitter': 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + self.user,
             'vimeo': 'https://api.vimeo.com/users/' + self.user + '/videos'

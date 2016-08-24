@@ -34,6 +34,7 @@ selector|string\|element|'.social-dig'|Selector for the container
 service|string|''|Service
 user|string|''|Service user (username/id/etc...)
 auth|string|''|Service authorization token/key
+cacheLimit|int|5|Number of seconds to cache the data using localStorage
 
 
 ## To-Do
