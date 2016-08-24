@@ -18,18 +18,6 @@
     }
 
     SocialDig.prototype = {
-        saveCache: function() {
-            var self = this;
-            var now = new Date().getTime();
-            var newCacheData = JSON.stringify({
-                time: now,
-                data: self.data
-            });
-
-            // Save new data into localStorage
-            localStorage.setItem(self.service, newCacheData);
-        },
-
         /************************************
          * Handle caching the returned data *
          ************************************/
@@ -50,6 +38,74 @@
             }
 
             return foundCache;
+        },
+
+        /**********************************
+         *  Handle our special JSONP APIs *
+         **********************************/
+        JSONP: function(cb) {
+            var self = this;
+            var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+            window[callbackName] = function(data) {
+                self.data = data;
+
+                // Save the new data to localStorage
+                self.cacheData();
+
+                // Cleanup
+                delete window[callbackName];
+                document.body.removeChild(script);
+
+                // Run our callback function
+                cb(self.data);
+            };
+
+            var script = document.createElement('script');
+            script.src = self.url + (self.url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+            document.body.appendChild(script);
+        },
+
+        /**********************************************
+         * Make our HTTP request to get the JSON data *
+         **********************************************/
+        makeRequest: function(cb) {
+            var self = this;
+            var request = new XMLHttpRequest();
+            request.open('GET', self.url, true);
+
+            // Enable additional headers
+            var headers = ['dribbble', 'spotify', 'vimeo'];
+            if (headers.indexOf(self.service) > -1) {
+                request.setRequestHeader('Authorization', 'Bearer ' + self.auth);
+            }
+
+            // Check for a successful response
+            request.onload = function() {
+                // Parse the response
+                var data = JSON.parse(request.responseText);
+                self.data = data;
+
+                // Save the new data to localStorage
+                self.cacheData();
+
+                // Check the status of the request
+                if (request.status >= 200 && request.status < 400) {
+                    // Run our callback function
+                    cb(self.data);
+                } else {
+                    // Error from the server
+                    throw self.data.message;
+                }
+            };
+
+            // Handle any errors
+            request.onerror = function() {
+                // Connection error
+                throw 'connection error';
+            };
+
+            // Send the request
+            request.send();
         },
 
         /*********************************************
@@ -79,72 +135,19 @@
             }
         },
 
-        /**********************************************
-         * Make our HTTP request to get the JSON data *
-         **********************************************/
-        makeRequest: function(cb) {
+        /*************************************
+         * Save our new data to localStorage *
+         *************************************/
+        cacheData: function() {
             var self = this;
-            var request = new XMLHttpRequest();
-            request.open('GET', self.url, true);
+            var now = new Date().getTime();
+            var newCacheData = JSON.stringify({
+                time: now,
+                data: self.data
+            });
 
-            // Enable additional headers
-            var headers = ['dribbble', 'spotify', 'vimeo'];
-            if (headers.indexOf(self.service) > -1) {
-                request.setRequestHeader('Authorization', 'Bearer ' + self.auth);
-            }
-
-            // Check for a successful response
-            request.onload = function() {
-                // Parse the response
-                var data = JSON.parse(request.responseText);
-                self.data = data;
-
-                // Save the new data to localStorage
-                self.saveCache();
-
-                // Check the status of the request
-                if (request.status >= 200 && request.status < 400) {
-                    // Run our callback function
-                    cb(self.data);
-                } else {
-                    // Error from the server
-                    throw self.data.message;
-                }
-            };
-
-            // Handle any errors
-            request.onerror = function() {
-                // Connection error
-                throw 'connection error';
-            };
-
-            // Send the request
-            request.send();
-        },
-
-        /**********************************
-         *  Handle our special JSONP APIs *
-         **********************************/
-        JSONP: function(cb) {
-            var self = this;
-            var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
-            window[callbackName] = function(data) {
-                self.data = data;
-
-                // Save the new data to localStorage
-                self.saveCache();
-
-                // Cleanup
-                delete window[callbackName];
-                document.body.removeChild(script);
-
-                // Run our callback function
-                cb(self.data);
-            };
-
-            var script = document.createElement('script');
-            script.src = self.url + (self.url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-            document.body.appendChild(script);
+            // Save new data into localStorage
+            localStorage.setItem(self.service, newCacheData);
         }
     };
 
