@@ -1,8 +1,8 @@
 // Variables
 
 // Colors
-$primary: #6DA08A;
-$secondary: #333333;
+$primary: #ff965f;
+$secondary: #555555;
 $colors: (
     primary: (
         light: mix(white, $primary, 20%),
@@ -52,16 +52,55 @@ $success: map-get(map-get($colors, other), success);
 $warn: map-get(map-get($colors, other), warn);
 $alert: map-get(map-get($colors, other), alert);
 
+// Brand Colors
+// Use: map-get($brands, facebook);
+$brands: (
+  500px: #222222,
+  android: #a4c639,
+  behance: #1769ff,
+  codepen: #000000,
+  delicious: #3399ff,
+  digg: #000000,
+  dribbble: #ea4c89,
+  dropbox: #007ee5,
+  facebook: #3b5998,
+  flickr: #ff0084,
+  foursquare: #0072b1,
+  github: #333333,
+  google-plus: #dd4b39,
+  instagram: #3f729b,
+  lastfm: #c3000d,
+  linkedin: #007bb6,
+  pinterest: #cb2027,
+  reddit: #5f99cf,
+  skype: #00aff0,
+  snapchat: #fffc00,
+  soundcloud: #ff8800,
+  spotify: #7ab800,
+  stumbleupon: #eb4924,
+  trello: #256a92,
+  tumblr: #32506d,
+  twitch: #6441a5,
+  twitter: #00aced,
+  vimeo: #1ab7ea,
+  vine: #00bf8f,
+  vk: #45668e,
+  xing: #026466,
+  yahoo: #400191,
+  yelp: #c41200,
+  youtube: #bb0000
+);
+
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto+Slab:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans:300,400,700);
 $helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $open-sans: 'Open Sans', $helvetica;
 
 $georgia: Georgia, Times, serif;
-$roboto: 'Roboto Slab', $georgia;
+$poiret-one: 'Poiret One', $helvetica;
 
 $font: $open-sans;
-$font-secondary: $roboto;
+$font-secondary: $poiret-one;
 
 // Layout
 $min-width: 20rem;

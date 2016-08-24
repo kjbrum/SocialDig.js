@@ -1,0 +1,76 @@
+.section {
+    padding: 2rem 0;
+}
+
+.section--hero {
+    background: $primary;
+    padding: 4rem 0;
+
+    h1,
+    h2 {
+        color: $white;
+    }
+}
+
+.section--demo {
+    .heading {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .g {
+        margin-top: 2rem;
+    }
+
+    .gi {
+        text-align: center;
+    }
+
+    a {
+        font-size: 3rem;
+        line-height: 0;
+
+        i {
+            transform: translateY(0);
+            transition: 0.3s ease-in-out;
+        }
+
+        &:hover {
+            i {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (min-width: $bp-xs) {
+            font-size: 6rem;
+        }
+
+        @each $brand, $color in $brands {
+            .fa-#{$brand} {
+                color: $color;
+            }
+        }
+
+    }
+}
+
+.section--share {
+    .social-share {
+        font-size: 4rem;
+        line-height: 0;
+
+        @media all and (min-width: $bp-xs) {
+            font-size: 6rem;
+        }
+
+        li {
+            display: inline-block;
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+}
