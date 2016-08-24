@@ -31,7 +31,7 @@
             }
 
             // Make the API request
-            var special = ['instagram', 'behance'];
+            var special = ['instagram', 'behance', 'tumblr'];
             if (special.indexOf(self.service) > -1) {
                 self.JSONP(self.cb);
             } else {
@@ -124,6 +124,7 @@
             'pinterest': 'https://api.pinterest.com/v1/me/boards/?access_token=' + self.auth + '&fields=id,name,url,created_at,counts,description,creator,image,privacy,reason',
             'spotify': 'https://api.spotify.com/v1/users/' + self.user + '/playlists',
             'trello': 'https://api.trello.com/1/members/' + self.user  + '/boards',
+            'tumblr': 'https://api.tumblr.com/v2/blog/' + self.user + '.tumblr.com/posts?api_key=' + self.auth,
             'twitter': 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + self.user,
             'vimeo': 'https://api.vimeo.com/users/' + self.user + '/videos'
         };
