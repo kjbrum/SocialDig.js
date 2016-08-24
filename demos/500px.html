@@ -11,9 +11,45 @@
     <body>
         <a href="../" class="view-more">View more demos...</a>
 
-        <section class="section">
+        <section>
             <div class="container">
-                <h4>500px</h4>
+                <h3>500px</h3>
+                <hr>
+                <h4>Code:</h4>
+<pre>SocialDig({
+    selector: '.fivehundredpx',
+    service: '500px',
+    user: 'kjbrum',
+    auth: 'xxxxx'
+}, function(data) {
+    if (data.photos.length > 0) {
+        var list = document.createElement('div');
+        list.className = 'g g-s-2 photos';
+
+        // Loop through the photos
+        data.photos.forEach(function(el, idx, arr) {
+            if (idx < 4) {
+                var item = document.createElement('div');
+                item.className = 'gi photo';
+
+                item.innerHTML = '&lt;a href="http://500px.com' + el.url + '" target="_blank"&gt;&lt;img src="' + el.image_url + '" alt="' + el.name + '" title="' + el.name + '"&gt;&lt;br&gt;' + el.name + '&lt;/a&gt;';
+
+                // Add the new item to the list
+                list.appendChild(item);
+            }
+        });
+
+        // Add the list to the page
+        document.querySelector('.fivehundredpx').appendChild(list);
+    }
+});</pre>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h4>Results:</h4>
                 <div class="fivehundredpx"></div>
             </div>
         </section>
