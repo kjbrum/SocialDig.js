@@ -10,20 +10,20 @@ http://kylebrumm.com/SocialDig.js/
 
 ## Features
 
-- 500px - photos
-- Behance - projects
-- CodePen - pens
-- Dribbble - shots
-- Flickr - photos
-- Github - repos
-- Google+ - posts
-- Instagram - photos
-- Last.fm - recent songs
-- Pinterest - boards
-- Spotify - playlists
-- Trello - boards
-- Tumblr - posts
-- Vimeo - videos
+- [500px](./demos/500px.html) - photos
+- [Behance](./demos/behance.html) - projects
+- [CodePen](./demos/codepen.html) - pens
+- [Dribbble](./demos/dribbble.html) - shots
+- [Flickr](./demos/flickr.html) - photos
+- [Github](./demos/github.html) - repos
+- [Google+](./demos/google-plus.html) - posts
+- [Instagram](./demos/instagram.html) - photos
+- [Last.fm](./demos/lastfm.html) - recent songs
+- [Pinterest](./demos/pinterest.html) - boards
+- [Spotify](./demos/spotify.html) - playlists
+- [Trello](./demos/trello.html) - boards
+- [Tumblr](./demos/tumblr.html) - posts
+- [Vimeo](./demos/vimeo.html) - videos
 
 
 ## Options
