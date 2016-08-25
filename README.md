@@ -1,4 +1,4 @@
-# ![SocialDig.js](https://raw.githubusercontent.com/kjbrum/SocialDig.js/master/img/social-dig.png)
+# ![SocialDig.js](https://raw.githubusercontent.com/kjbrum/SocialDig.js/gh-pages/img/social-dig.png)
 
 > Query data from your social profiles with ease.
 
