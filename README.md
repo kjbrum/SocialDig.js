@@ -39,6 +39,9 @@ cacheLimit|int|5|Number of minutes to cache the data using localStorage
 
 ## Changelog
 
+- v0.1.1
+    - Cleaning up all the website crap
+
 - v0.1.0
     - Initial release
 
