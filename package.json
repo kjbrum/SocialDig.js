@@ -2,6 +2,7 @@
   "name": "SocialDig.js",
   "version": "0.1.0",
   "description": "Query data from your social profiles with ease.",
+  "main": "dist/SocialDig.js",
   "scripts": {
     "browsersync": "browser-sync start --server --files 'css/style.css, js/*.min.js, **/*.html'",
     "build": "npm run js:build && npm run css:build",
@@ -20,12 +21,20 @@
     "type": "git",
     "url": "https://github.com/kjbrum/SocialDig.js.git"
   },
-  "author": "Kyle Brumm",
+  "keywords": [
+    "social",
+    "feed",
+    "media",
+    "dig",
+    "profiles",
+    "api"
+  ],
+  "author": "Kyle Brumm (http://kylebrumm.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kjbrum/SocialDig.js/issues"
   },
-  "homepage": "https://github.com/kjbrum/SocialDig.js#readme",
+  "homepage": "https://kylebrumm.com/SocialDig.js",
   "devDependencies": {
     "autoprefixer": "latest",
     "node-sass": "latest",
