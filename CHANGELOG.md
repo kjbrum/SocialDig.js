@@ -1,5 +1,8 @@
 ## Changelog
 
+- v0.1.3
+    - Recombine branches and just ignore unecessary files
+
 - v0.1.2
     - Created Bower package
 

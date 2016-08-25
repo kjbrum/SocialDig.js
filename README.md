@@ -1,5 +1,5 @@
-![npm](https://img.shields.io/badge/npm-0.1.2-lightgrey.svg?style=flat-square)
-![bower](https://img.shields.io/badge/bower-0.1.2-blue.svg?style=flat-square)
+![npm](https://img.shields.io/badge/npm-0.1.3-lightgrey.svg?style=flat-square)
+![bower](https://img.shields.io/badge/bower-0.1.3-blue.svg?style=flat-square)
 
 # ![SocialDig.js](https://raw.githubusercontent.com/kjbrum/SocialDig.js/master/img/social-dig.png)
 
