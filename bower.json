@@ -8,10 +8,6 @@
   "scripts": {
     "build": "uglifyjs dist/SocialDig.js -c -m --comments='@license' -o dist/SocialDig.min.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kjbrum/SocialDig.js.git"
-  },
   "keywords": [
     "social",
     "feed",
@@ -21,9 +17,6 @@
     "api"
   ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kjbrum/SocialDig.js/issues"
-  },
   "devDependencies": {
     "uglify-js": "latest"
   }
