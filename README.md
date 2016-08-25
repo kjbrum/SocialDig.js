@@ -41,6 +41,9 @@ cacheLimit|int|5|Number of seconds to cache the data using localStorage
 
 - [ ] Add more error handling
 - [ ] Add cross-browser handling
+- [ ] Add a way to deliver using a CDN [NPMCDN?](https://npmcdn.com/#/)
+- [ ] Add to npm
+- [ ] Add to Bower
 
 
 ## Changelog
