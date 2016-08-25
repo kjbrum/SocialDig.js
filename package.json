@@ -1,6 +1,8 @@
 {
   "name": "SocialDig.js",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "homepage": "https://kylebrumm.com/SocialDig.js",
+  "author": "Kyle Brumm (http://kylebrumm.com)",
   "description": "Query data from your social profiles with ease.",
   "main": "dist/SocialDig.js",
   "scripts": {
@@ -29,12 +31,10 @@
     "profiles",
     "api"
   ],
-  "author": "Kyle Brumm (http://kylebrumm.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kjbrum/SocialDig.js/issues"
   },
-  "homepage": "https://kylebrumm.com/SocialDig.js",
   "devDependencies": {
     "autoprefixer": "latest",
     "node-sass": "latest",

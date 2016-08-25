@@ -1,4 +1,4 @@
-# ![SocialDig.js](https://raw.githubusercontent.com/kjbrum/SocialDig.js/master/img/social-dig.png)
+# ![SocialDig.js](https://raw.githubusercontent.com/kjbrum/SocialDig.js/gh-pages/img/social-dig.png)
 
 > Query data from your social profiles with ease.
 
@@ -8,35 +8,6 @@
 http://kylebrumm.com/SocialDig.js/
 
 
-## Features
-
-- [500px](./demos/500px.html) - photos
-- [Behance](./demos/behance.html) - projects
-- [CodePen](./demos/codepen.html) - pens
-- [Dribbble](./demos/dribbble.html) - shots
-- [Flickr](./demos/flickr.html) - photos
-- [Github](./demos/github.html) - repos
-- [Google+](./demos/google-plus.html) - posts
-- [Instagram](./demos/instagram.html) - photos
-- [Last.fm](./demos/lastfm.html) - recent songs
-- [Pinterest](./demos/pinterest.html) - boards
-- [Spotify](./demos/spotify.html) - playlists
-- [Trello](./demos/trello.html) - boards
-- [Tumblr](./demos/tumblr.html) - posts
-- [Vimeo](./demos/vimeo.html) - videos
-
-
-## Options
-
-|Option|Type|Default|Description|
-|---|---|---|---|
-selector|string\|element|'.social-dig'|Selector for the container
-service|string|''|Service
-user|string|''|Service user (username/id/etc...)
-auth|string|''|Service authorization token/key
-cacheLimit|int|5|Number of minutes to cache the data using localStorage
-
-
 ## To-Do
 
 - [ ] Add more error handling
@@ -44,12 +15,6 @@ cacheLimit|int|5|Number of minutes to cache the data using localStorage
 - [ ] Add a way to deliver using a CDN [NPMCDN?](https://npmcdn.com/#/)
 - [ ] Add to npm
 - [ ] Add to Bower
-
-
-## Changelog
-
-- v0.1.0
-    - Initial release
 
 
 ## License

@@ -8,12 +8,16 @@
 
 ::-moz-selection {
     color: $white;
-    background: $primary;
+    background: $secondary;
 }
 
 ::selection {
     color: $white;
-    background: $primary;
+    background: $secondary;
+}
+
+html {
+    background: $white;
 }
 
 body {
