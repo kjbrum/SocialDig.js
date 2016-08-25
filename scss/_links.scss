@@ -1,19 +1,19 @@
 // Links
 
 a {
-    color: $secondary;
+    color: $primary;
     text-decoration: underline;
     transition: color 0.3s ease-in-out;
 
     &:hover {
-        color: $secondary-light;
+        color: $secondary;
     }
 }
 
 .view-more {
     display: block;
     padding: 0.5rem 1rem;
-    color: white;
+    color: $white;
     text-decoration: none;
     text-align: center;
     background: $primary;
