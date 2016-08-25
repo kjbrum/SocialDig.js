@@ -9,6 +9,28 @@
     h1,
     h2 {
         color: $white;
+        // text-shadow: 4px 4px rgba(0,0,0,0.25);
+    }
+
+    h2 {
+        text-shadow: 1px 1px #C07147,
+                     3px 3px #C07147,
+                     5px 5px #C07147;
+
+        @media (min-width: $bp-s) {
+            font-size: 3rem;
+        }
+    }
+
+    h1 {
+        text-shadow: 1px 1px #C07147,
+                     3px 3px #C07147,
+                     5px 5px #C07147,
+                     9px 9px #C07147;
+
+        @media (min-width: $bp-s) {
+            font-size: 5rem;
+        }
     }
 }
 

@@ -7,26 +7,24 @@ h4,
 h5,
 h6 {
     margin: 0 0 0.5rem 0;
-    font-family: $font-secondary;
-    font-weight: 800;
+    color: $primary;
     line-height: 1.2;
-    letter-spacing: 2px;
+    // letter-spacing: 2px;
 }
 
 h1,
 h2,
 h3 {
-    color: $primary;
+    font-family: $font-secondary;
 }
 
 h4,
 h5,
 h6 {
-    color: $gray-ultradark;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 h2 {

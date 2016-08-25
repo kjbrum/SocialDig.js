@@ -92,15 +92,14 @@ $brands: (
 );
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Baloo+Bhaina|Open+Sans:300,400,700);
 $helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $open-sans: 'Open Sans', $helvetica;
 
 $georgia: Georgia, Times, serif;
-$poiret-one: 'Poiret One', $helvetica;
-
+$baloo: 'Baloo Bhaina', cursive;
 $font: $open-sans;
-$font-secondary: $poiret-one;
+$font-secondary: $baloo;
 
 // Layout
 $min-width: 20rem;
