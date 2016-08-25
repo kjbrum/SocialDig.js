@@ -1,6 +1,6 @@
 {
   "name": "SocialDig.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Query data from your social profiles with ease.",
   "main": "dist/SocialDig.js",
   "scripts": {
@@ -25,11 +25,6 @@
   },
   "homepage": "https://kylebrumm.com/SocialDig.js",
   "devDependencies": {
-    "autoprefixer": "latest",
-    "node-sass": "latest",
-    "parallelshell": "latest",
-    "postcss-cli": "latest",
-    "uglify-js": "latest",
-    "watch": "latest"
+    "uglify-js": "latest"
   }
 }
