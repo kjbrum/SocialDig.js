@@ -2,7 +2,7 @@
   "name": "SocialDig.js",
   "version": "0.1.2",
   "homepage": "https://kylebrumm.com/SocialDig.js",
-  "author": "Kyle Brumm (http://kylebrumm.com)",
+  "author": "Kyle Brumm <kjbrumm@gmail.com> (http://kylebrumm.com)",
   "description": "Query data from your social profiles with ease.",
   "main": "dist/SocialDig.js",
   "scripts": {
@@ -13,9 +13,10 @@
     "css:compile": "node-sass --output-style compressed scss/style.scss css/style.css",
     "css:watch": "watch 'npm run css:build' scss",
     "dev": "parallelshell 'npm run watch' 'npm run browsersync'",
-    "js:build": "npm run js:head && npm run js:main",
+    "js:build": "npm run js:head && npm run js:main && npm run js:dist",
     "js:head": "uglifyjs js/head/*.js -o js/head.min.js",
     "js:main": "uglifyjs js/src/*.js -o js/main.min.js",
+    "js:dist": "uglifyjs dist/SocialDig.js -c -m --comments='@license' -o dist/SocialDig.min.js",
     "js:watch": "watch 'npm run js:build' js/head js/src",
     "watch": "parallelshell 'npm run js:watch' 'npm run css:watch'"
   },

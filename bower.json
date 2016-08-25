@@ -1,0 +1,37 @@
+{
+  "name": "SocialDig.js",
+  "version": "0.1.2",
+  "homepage": "https://kylebrumm.com/SocialDig.js",
+  "author": "Kyle Brumm (http://kylebrumm.com)",
+  "description": "Query data from your social profiles with ease.",
+  "main": "dist/SocialDig.js",
+  "keywords": [
+    "social",
+    "feed",
+    "media",
+    "dig",
+    "profiles",
+    "api"
+  ],
+  "ignore": [
+    ".DS_Store",
+    "node_modules",
+    ".sass-cache",
+    "*.log",
+    "css",
+    "demos",
+    "img",
+    "js",
+    "scss",
+    "index.html"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "node-sass": "latest",
+    "parallelshell": "latest",
+    "postcss-cli": "latest",
+    "uglify-js": "latest",
+    "watch": "latest"
+  }
+}
