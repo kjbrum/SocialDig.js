@@ -5,9 +5,6 @@
   "author": "Kyle Brumm (http://kylebrumm.com)",
   "description": "Query data from your social profiles with ease.",
   "main": "dist/SocialDig.js",
-  "scripts": {
-    "build": "uglifyjs dist/SocialDig.js -c -m --comments='@license' -o dist/SocialDig.min.js"
-  },
   "keywords": [
     "social",
     "feed",
