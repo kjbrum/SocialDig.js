@@ -1,3 +1,6 @@
+![npm](https://img.shields.io/badge/npm-0.1.2-lightgrey.svg?style=flat-square)
+![bower](https://img.shields.io/badge/bower-0.1.2-blue.svg?style=flat-square)
+
 # ![SocialDig.js](https://raw.githubusercontent.com/kjbrum/SocialDig.js/gh-pages/img/social-dig.png)
 
 > Query data from your social profiles with ease.
@@ -35,15 +38,6 @@ service|string|''|Service
 user|string|''|Service user (username/id/etc...)
 auth|string|''|Service authorization token/key
 cacheLimit|int|5|Number of minutes to cache the data using localStorage
-
-
-## Changelog
-
-- v0.1.1
-    - Cleaning up all the website crap
-
-- v0.1.0
-    - Initial release
 
 
 ## License

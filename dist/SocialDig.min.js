@@ -1,7 +1,7 @@
 /**
  *
  *  -----------------------------------
- *  SocialDig.js - v0.1.1
+ *  SocialDig.js - v0.1.2
  *  -----------------------------------
  *
  *  Query data from your social profiles with ease.
