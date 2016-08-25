@@ -10,20 +10,20 @@ http://kylebrumm.com/SocialDig.js/
 
 ## Features
 
-- [500px](./demos/500px.html) - photos
-- [Behance](./demos/behance.html) - projects
-- [CodePen](./demos/codepen.html) - pens
-- [Dribbble](./demos/dribbble.html) - shots
-- [Flickr](./demos/flickr.html) - photos
-- [Github](./demos/github.html) - repos
-- [Google+](./demos/google-plus.html) - posts
-- [Instagram](./demos/instagram.html) - photos
-- [Last.fm](./demos/lastfm.html) - recent songs
-- [Pinterest](./demos/pinterest.html) - boards
-- [Spotify](./demos/spotify.html) - playlists
-- [Trello](./demos/trello.html) - boards
-- [Tumblr](./demos/tumblr.html) - posts
-- [Vimeo](./demos/vimeo.html) - videos
+- [500px](http://kylebrumm.com/SocialDig.js/demos/500px.html) - photos
+- [Behance](http://kylebrumm.com/SocialDig.js/demos/behance.html) - projects
+- [CodePen](http://kylebrumm.com/SocialDig.js/demos/codepen.html) - pens
+- [Dribbble](http://kylebrumm.com/SocialDig.js/demos/dribbble.html) - shots
+- [Flickr](http://kylebrumm.com/SocialDig.js/demos/flickr.html) - photos
+- [Github](http://kylebrumm.com/SocialDig.js/demos/github.html) - repos
+- [Google+](http://kylebrumm.com/SocialDig.js/demos/google-plus.html) - posts
+- [Instagram](http://kylebrumm.com/SocialDig.js/demos/instagram.html) - photos
+- [Last.fm](http://kylebrumm.com/SocialDig.js/demos/lastfm.html) - recent songs
+- [Pinterest](http://kylebrumm.com/SocialDig.js/demos/pinterest.html) - boards
+- [Spotify](http://kylebrumm.com/SocialDig.js/demos/spotify.html) - playlists
+- [Trello](http://kylebrumm.com/SocialDig.js/demos/trello.html) - boards
+- [Tumblr](http://kylebrumm.com/SocialDig.js/demos/tumblr.html) - posts
+- [Vimeo](http://kylebrumm.com/SocialDig.js/demos/vimeo.html) - videos
 
 
 ## Options
@@ -35,15 +35,6 @@ service|string|''|Service
 user|string|''|Service user (username/id/etc...)
 auth|string|''|Service authorization token/key
 cacheLimit|int|5|Number of minutes to cache the data using localStorage
-
-
-## To-Do
-
-- [ ] Add more error handling
-- [ ] Add cross-browser handling
-- [ ] Add a way to deliver using a CDN [NPMCDN?](https://npmcdn.com/#/)
-- [ ] Add to npm
-- [ ] Add to Bower
 
 
 ## Changelog
