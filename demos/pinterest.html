@@ -11,9 +11,49 @@
     <body>
         <a href="../" class="view-more">View more demos...</a>
 
+        <section>
+            <div class="container">
+                <h3>Pinterest</h3>
+                <hr>
+                <h4>Code:</h4>
+<pre>SocialDig({
+    selector: '.pinterest',
+    service: 'pinterest',
+    auth: 'xxxxx'
+}, function(data) {
+    if (data.data.length > 0) {
+        var list = document.createElement('div');
+        list.className = 'g g-s-2 boards';
+
+        // Loop through the boards
+        data.data.forEach(function(el, idx, arr) {
+            if (idx < 4) {
+                var item = document.createElement('div');
+                item.className = 'gi board';
+
+                item.innerHTML = '&lt;a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="100" href="' + el.url + '"&gt;&lt;/a&gt;';
+
+                // Add the new item to the list
+                list.appendChild(item);
+            }
+        });
+
+        // Add the list to the page
+        document.querySelector('.pinterest').appendChild(list);
+
+        // Add the embed script
+        var pinScript = document.createElement('script');
+        pinScript.src = '//assets.pinterest.com/js/pinit.js';
+        pinScript.async = true;
+        document.getElementsByTagName('body')[0].appendChild(pinScript);
+    }
+});</pre>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
-                <h4>Pinterest</h4>
+                <h4>Results:</h4>
                 <div class="pinterest"></div>
             </div>
         </section>
@@ -28,13 +68,13 @@
             }, function(data) {
                 if (data.data.length > 0) {
                     var list = document.createElement('div');
-                    list.className = 'g g-s-2 pins';
+                    list.className = 'g g-s-2 boards';
 
-                    // Loop through the pins
+                    // Loop through the boards
                     data.data.forEach(function(el, idx, arr) {
                         if (idx < 4) {
                             var item = document.createElement('div');
-                            item.className = 'gi pin';
+                            item.className = 'gi board';
 
                             item.innerHTML = '<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="100" href="' + el.url + '"></a>';
 
@@ -46,7 +86,7 @@
                     // Add the list to the page
                     document.querySelector('.pinterest').appendChild(list);
 
-                    // Add the new script
+                    // Add the embed script
                     var pinScript = document.createElement('script');
                     pinScript.src = '//assets.pinterest.com/js/pinit.js';
                     pinScript.async = true;

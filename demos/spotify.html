@@ -11,9 +11,44 @@
     <body>
         <a href="../" class="view-more">View more demos...</a>
 
+        <section>
+            <div class="container">
+                <h3>Spotify</h3>
+                <hr>
+                <h4>Code:</h4>
+<pre>SocialDig({
+    selector: '.spotify',
+    service: 'spotify',
+    user: 'kjbrum',
+    auth: 'xxxxx'
+}, function(data) {
+    if (data.items.length > 0) {
+        var list = document.createElement('div');
+        list.className = 'g g-s-2 playlists';
+
+        // Loop through the playlists
+        data.items.forEach(function(el, idx, arr) {
+            if (idx < 4) {
+                var item = document.createElement('div');
+                item.className = 'gi playlist';
+
+                item.innerHTML = '&lt;iframe src="https://embed.spotify.com/?uri=' + el.uri + '" width="300" height="380" frameborder="0" allowtransparency="true"&gt;&lt;/iframe&gt;';
+
+                // Add the new item to the list
+                list.appendChild(item);
+            }
+        });
+
+        // Add the list to the page
+        document.querySelector('.spotify').appendChild(list);
+    }
+});</pre>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
-                <h4>Spotify</h4>
+                <h4>Results:</h4>
                 <div class="spotify"></div>
             </div>
         </section>

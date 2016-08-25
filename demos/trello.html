@@ -11,9 +11,43 @@
     <body>
         <a href="../" class="view-more">View more demos...</a>
 
+        <section>
+            <div class="container">
+                <h3>Trello</h3>
+                <hr>
+                <h4>Code:</h4>
+<pre>SocialDig({
+    selector: '.trello',
+    service: 'trello',
+    user: 'kylebrumm'
+}, function(data) {
+    if (data.length > 0) {
+        var list = document.createElement('ul');
+        list.className = 'list-plain boards';
+
+        // Loop through the boards
+        data.forEach(function(el, idx, arr) {
+            if (idx < 4) {
+                var item = document.createElement('li');
+                item.className = 'board';
+
+                item.innerHTML = '&lt;a href="' + el.url + '" target="_blank"&gt;' + el.name + '&lt;/a&gt;&lt;br&gt;&lt;small&gt;' + el.desc + '&lt;/small&gt;';
+
+                // Add the new item to the list
+                list.appendChild(item);
+            }
+        });
+
+        // Add the list to the page
+        document.querySelector('.trello').appendChild(list);
+    }
+});</pre>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
-                <h4>Trello</h4>
+                <h4>Results:</h4>
                 <div class="trello"></div>
             </div>
         </section>

@@ -11,9 +11,45 @@
     <body>
         <a href="../" class="view-more">View more demos...</a>
 
+        <section>
+            <div class="container">
+                <h3>CodePen</h3>
+                <hr>
+                <h4>Code:</h4>
+<pre>SocialDig({
+    selector: '.codepen',
+    service: 'codepen',
+    user: 'kjbrum',
+}, function(data) {
+    if (data.data.length > 0) {
+        var list = document.createElement('div');
+        list.className = 'g g-s-2 pens';
+
+        // Loop through the pens
+        data.data.forEach(function(el, idx, arr) {
+            if (idx < 4) {
+                var item = document.createElement('div');
+                    item.className = 'gi pen';
+
+                // Create the new pen iframe
+                item.innerHTML = '&lt;iframe height="350" scrolling="no" src="//codepen.io/' + el.user.username + '/embed/' + el.id + '/?height=350&theme-id=light&default-tab=result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;"&gt;See the Pen &lt;a href="' + el.link + '"&gt;' + el.title + '&lt;/a&gt; by &lt;a href="http://codepen.io/' + el.user.username + '"&gt;@' + el.user.username + '&lt;/a&gt; on &lt;a href="http://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/iframe&gt;';
+
+                // Add the new item to the list
+                list.appendChild(item);
+            }
+        });
+
+        // Add the list to the page
+        document.querySelector('.codepen').appendChild(list);
+    }
+});</pre>
+
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
-                <h4>CodePen</h4>
+                <h4>Results:</h4>
                 <div class="codepen"></div>
             </div>
         </section>
@@ -37,7 +73,7 @@
                                 item.className = 'gi pen';
 
                             // Create the new pen iframe
-                            item.innerHTML = '<iframe height="350" scrolling="no" src="//codepen.io/kjbrum/embed/' + el.id + '/?height=350&theme-id=light&default-tab=result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/kjbrum/pen/LZGrjj/">LZGrjj</a> by Kyle Brumm (<a href="http://codepen.io/kjbrum">@kjbrum</a>) on <a href="http://codepen.io">CodePen</a>.</iframe>';
+                            item.innerHTML = '<iframe height="350" scrolling="no" src="//codepen.io/' + el.user.username + '/embed/' + el.id + '/?height=350&theme-id=light&default-tab=result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="' + el.link + '">' + el.title + '</a> by <a href="http://codepen.io/' + el.user.username + '">@' + el.user.username + '</a> on <a href="http://codepen.io">CodePen</a>.</iframe>';
 
                             // Add the new item to the list
                             list.appendChild(item);

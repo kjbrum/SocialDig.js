@@ -11,9 +11,43 @@
     <body>
         <a href="../" class="view-more">View more demos...</a>
 
-        <section class="section">
+        <section>
             <div class="container">
-                <h4>Last.fm</h4>
+                <h3>Last.fm</h3>
+                <hr>
+                <h4>Code:</h4>
+<pre>SocialDig({
+    selector: '.lastfm',
+    service: 'lastfm',
+    user: 'kjbrum',
+    auth: 'xxxxx'
+}, function(data) {
+    if (data.recenttracks.track.length > 0) {
+        var list = document.createElement('div');
+        list.className = 'g g-s-2 songs';
+
+        // Loop through the songs
+        data.recenttracks.track.forEach(function(el, idx, arr) {
+            if (idx < 4) {
+                var item = document.createElement('div');
+                item.className = 'gi song';
+
+                item.innerHTML = '&lt;a href="' + el.url + '" target="_blank"&gt;&lt;img src="' + el.image[3]['#text'] + '"&gt;&lt;br&gt;' + el.name + '&lt;/a&gt;&lt;br&gt;&lt;small&gt;' + el.artist['#text'] + '&lt;/small&gt;';
+
+                // Add the new item to the list
+                list.appendChild(item);
+            }
+        });
+
+        // Add the list to the page
+        document.querySelector('.lastfm').appendChild(list);
+    }
+});</pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class=Results:</h4>
                 <div class="lastfm"></div>
             </div>
         </section>
