@@ -9,12 +9,13 @@
     h1,
     h2 {
         color: $white;
+        color: $secondary;
     }
 
     h2 {
-        text-shadow: 1px 1px $secondary,
-                     3px 3px $secondary,
-                     5px 5px $secondary;
+        text-shadow: 1px 1px $primary-dark,
+                     3px 3px $primary-dark,
+                     5px 5px $primary-dark;
 
         @media (min-width: $bp-s) {
             font-size: 3rem;
@@ -22,10 +23,10 @@
     }
 
     h1 {
-        text-shadow: 1px 1px $secondary,
-                     3px 3px $secondary,
-                     5px 5px $secondary,
-                     9px 9px $secondary;
+        text-shadow: 1px 1px $primary-dark,
+                     3px 3px $primary-dark,
+                     5px 5px $primary-dark,
+                     9px 9px $primary-dark;
 
         @media (min-width: $bp-s) {
             font-size: 5rem;
