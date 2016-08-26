@@ -3,8 +3,11 @@
 }
 
 .section--hero {
-    background: $primary;
-    padding: 4rem 0;
+    border-bottom: 1px solid $primary;
+
+    @media (min-width: $bp-s) {
+        padding: 4rem 0;
+    }
 
     h1,
     h2 {
@@ -12,24 +15,46 @@
         color: $secondary;
     }
 
-    h2 {
+    h1 {
+        margin-bottom: 1rem;
         text-shadow: 1px 1px $primary-dark,
-                     3px 3px $primary-dark,
-                     5px 5px $primary-dark;
+                     2px 2px $primary-dark,
+                     3px 3px $primary-dark;
 
         @media (min-width: $bp-s) {
-            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-size: 4.6rem;
+
+            text-shadow: 1px 1px $primary-dark,
+                         3px 3px $primary-dark,
+                         5px 5px $primary-dark;
         }
     }
 
-    h1 {
+    h2 {
+        font-size: 2rem;
         text-shadow: 1px 1px $primary-dark,
-                     3px 3px $primary-dark,
-                     5px 5px $primary-dark,
-                     9px 9px $primary-dark;
+                     2px 2px $primary-dark;
 
         @media (min-width: $bp-s) {
-            font-size: 5rem;
+            font-size: 2.5rem;
+
+            text-shadow: 1px 1px $primary-dark,
+                         3px 3px $primary-dark;
+        }
+    }
+
+    img {
+        display: block;
+        height: 100px;
+        margin-bottom: 1rem;
+
+        @media (min-width: $bp-s) {
+            display: inline-block;
+            height: 150px;
+            margin-right: 2rem;
+            margin-bottom: -3rem;
+            font-size: 4.6rem;
         }
     }
 }
