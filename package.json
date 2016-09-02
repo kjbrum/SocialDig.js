@@ -16,7 +16,7 @@
     "js:build": "npm run js:head && npm run js:main && npm run js:dist",
     "js:head": "uglifyjs js/head/*.js -o js/head.min.js",
     "js:main": "uglifyjs js/src/*.js -o js/main.min.js",
-    "js:dist": "uglifyjs dist/SocialDig.js -c -m --comments='@license' -o dist/SocialDig.min.js",
+    "js:dist": "uglifyjs dist/SocialDig.js -c -m --mangle-props=1 --comments='@license' -o dist/SocialDig.min.js",
     "js:watch": "watch 'npm run js:build' js/head js/src",
     "watch": "parallelshell 'npm run js:watch' 'npm run css:watch'"
   },
