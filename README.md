@@ -11,6 +11,27 @@
 http://kylebrumm.com/SocialDig.js/
 
 
+## Install
+
+__Bower:__
+
+```
+$ bower install SocialDig.js
+```
+
+__npm:__
+
+```
+$ npm install SocialDig.js
+```
+
+__CDN:__
+
+```
+<script src="https://npmcdn.com/SocialDig.js/dist/SocialDig.min.js"></script>
+```
+
+
 ## Features
 
 - 500px - photos ([demo](http://kylebrumm.com/SocialDig.js/demos/500px.html))
