@@ -28,7 +28,7 @@ $ npm install SocialDig.js
 __CDN:__
 
 ```
-<script src="https://npmcdn.com/SocialDig.js/dist/SocialDig.min.js"></script>
+<script src="https://unpkg.com/SocialDig.js/dist/SocialDig.min.js"></script>
 ```
 
 
